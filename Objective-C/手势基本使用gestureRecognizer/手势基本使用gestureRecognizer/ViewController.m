@@ -38,7 +38,13 @@
      
      */
     [self setupImageView];
+    
 //    [self setupTap];
+    [self setupPinch];
+    [self setupRotation];
+//    [self setupSwipe];
+    [self setupPan];
+
 
 }
 
@@ -53,18 +59,44 @@
     
     [self.view addSubview:imageView];
     self.imageView = imageView;
-    [self setupTap];
-    [self setupPinch];
+
     
 }
 
 #pragma mark - addGestureRecognizer
+
+//拖拽手势
+- (void)setupPan
+{
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureRecognizer:)];
+    pan.delegate = self;
+    [self.imageView addGestureRecognizer:pan];
+}
+
+//滑动手势
+- (void)setupSwipe
+{
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeGestureRecognizer:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionRight;
+    
+    swipe.delegate = self;
+    [self.imageView addGestureRecognizer:swipe];
+}
+
+//旋转手势
+- (void)setupRotation
+{
+    UIRotationGestureRecognizer *rotation = [[UIRotationGestureRecognizer alloc]initWithTarget:self action:@selector(rotationGestureRecognizer:)];
+    rotation.delegate = self;
+    [self.imageView addGestureRecognizer:rotation];
+}
 
 //捏合手势
 
 - (void)setupPinch
 {
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(pinchGestureRecognizer:)];
+    pinch.delegate = self;
     [self.imageView addGestureRecognizer:pinch];
 }
 
@@ -82,6 +114,33 @@
 
 #pragma mark - privateMethod
 
+- (void)panGestureRecognizer:(UIPanGestureRecognizer *)sender
+{
+    CGPoint moveP = [sender translationInView:self.imageView];
+    self.imageView.transform = CGAffineTransformTranslate(self.imageView.transform, moveP.x, moveP.y);
+    
+    //同样需要复位
+    [sender setTranslation:CGPointZero inView:self.imageView];
+}
+
+- (void)swipeGestureRecognizer:(UISwipeGestureRecognizer *)sender
+{
+
+
+    if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
+
+        [UIView animateWithDuration:0.25 animations:^{
+            self.imageView.transform = CGAffineTransformTranslate(self.imageView.transform, 50, 50);
+        }];
+    }
+}
+
+- (void)rotationGestureRecognizer:(UIRotationGestureRecognizer *)sender
+{
+    self.imageView.transform = CGAffineTransformRotate(self.imageView.transform, sender.rotation);
+    
+    sender.rotation = 0;
+}
 - (void)pinchGestureRecognizer:(UIPinchGestureRecognizer *)sender
 {
     self.imageView.transform = CGAffineTransformScale(self.imageView.transform, sender.scale, sender.scale);
@@ -112,14 +171,15 @@
 //    NSLog(@"previousLocation --- %@",NSStringFromCGPoint([touch previousLocationInView:self.imageView]));
 //    NSLog(@"location --- %@",NSStringFromCGPoint([touch locationInView:self.imageView]));
     
-    CGPoint currentPoint = [touch locationInView:self.imageView];
-    if (currentPoint.x > self.imageView.frame.size.width * 0.5) {
-        return NO;
-    }else {
-        return YES;
-    }
-
+//    CGPoint currentPoint = [touch locationInView:self.imageView];
+//    if (currentPoint.x > self.imageView.frame.size.width * 0.5) {
+//        return NO;
+//    }else {
+//        return YES;
+//    }
     
+    
+    return YES;
 }
 
 //允许多个手势

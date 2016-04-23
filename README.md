@@ -17,8 +17,10 @@
 
 
 ####社交
-*	有疑问或者好的建议欢迎私信我,以下是我的私人社交网络地址,也可以加我微信好友:yingyuanzhen
+*	有疑问或者好的建议欢迎私信我,以下是我的私人社交网络地址
 
 	*	微博:[SolonPu](http://weibo.com/311197707)
 
 	*	Twitter:[SolonPu](https://twitter.com/yyzorz)
+	
+	*	知乎专栏:[龙叔的码道场](http://zhuanlan.zhihu.com/longshu)

@@ -18,6 +18,11 @@
 @property (nonatomic,weak) SNPickerView *pickerView;
 /** showLabel */
 @property (nonatomic,weak) UILabel *showLabel;
+
+/** one */
+@property (nonatomic,strong) NSString *one;
+/** two */
+@property (nonatomic,strong) NSString *two;
 @end
 
 @implementation ViewController
@@ -79,10 +84,18 @@
 }
 
 
-- (void)pickerView:(SNPickerView *)pickerView didSelectComponent:(NSString *)one componentTwo:(NSString *)two
+- (void)pickerView:(SNPickerView *)pickerView didSelectComponent:(NSString *)one componentTwo:(NSString *)two inComponent:(NSInteger)component
 {
+    //无法同时传递2个值?????   WTF????
+    if (component == 0) {
+        self.one = one;
+    }else{
+        
+        self.two = two;
+    }
 
-    self.showLabel.text = [NSString stringWithFormat:@"%@ -- %@",one,two];
+    
+    self.showLabel.text = [NSString stringWithFormat:@"%@ -- %@",self.one,self.two];
 }
 
 - (void)pickerViewTaped

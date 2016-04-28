@@ -122,8 +122,8 @@
     }else if (component == 1) {
         twoStr = self.components[1][row];
     }
-    if ([self.delegate respondsToSelector:@selector(pickerView:didSelectComponent:componentTwo:)]) {
-        [self.delegate pickerView:self didSelectComponent:oneStr componentTwo:twoStr];
+    if ([self.delegate respondsToSelector:@selector(pickerView:didSelectComponent:componentTwo:inComponent:)]) {
+        [self.delegate pickerView:self didSelectComponent:oneStr componentTwo:twoStr inComponent:component];
     }
     
 }

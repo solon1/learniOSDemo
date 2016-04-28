@@ -16,7 +16,7 @@
 - (void)pickerView:(SNPickerView *)pickerView didClickSubmit:(UIBarButtonItem *)submit;
 
 //默认为2个component并通过代理传值
-- (void)pickerView:(SNPickerView *)pickerView didSelectComponent:(NSString *)one componentTwo:(NSString *)two;
+- (void)pickerView:(SNPickerView *)pickerView didSelectComponent:(NSString *)one componentTwo:(NSString *)two inComponent:(NSInteger)component;
 
 @end
 
@@ -27,9 +27,6 @@
 
 /** picker的rowheight */
 @property (nonatomic,assign) CGFloat rowHeight;
-
-/** 选择row返回的数组数据 */
-@property (nonatomic,strong) NSMutableArray<NSString*> *currentSelectedData;
 
 /** delegate */
 @property (nonatomic,weak) id<SNPickerViewDelegate> delegate;

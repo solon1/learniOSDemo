@@ -16,7 +16,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.searchContrller = [[SNSearchViewController alloc]initWithNibName:NSStringFromClass([SNSearchViewController class]) bundle:nil];
+    self.window.rootViewController = self.searchContrller;
+    
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 

@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		2844D0651CF9F3F9002D62DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D0641CF9F3F9002D62DF /* main.m */; };
 		2844D0681CF9F3F9002D62DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D0671CF9F3F9002D62DF /* AppDelegate.m */; };
-		2844D06B1CF9F3F9002D62DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D06A1CF9F3F9002D62DF /* ViewController.m */; };
-		2844D06E1CF9F3F9002D62DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2844D06C1CF9F3F9002D62DF /* Main.storyboard */; };
 		2844D0701CF9F3F9002D62DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2844D06F1CF9F3F9002D62DF /* Assets.xcassets */; };
 		2844D0731CF9F3F9002D62DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2844D0711CF9F3F9002D62DF /* LaunchScreen.storyboard */; };
 		2844D07E1CF9F3F9002D62DF /* StoreSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D07D1CF9F3F9002D62DF /* StoreSearchTests.m */; };
 		2844D0891CF9F3F9002D62DF /* StoreSearchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D0881CF9F3F9002D62DF /* StoreSearchUITests.m */; };
+		2844D09D1CF9F5B8002D62DF /* SNSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D09B1CF9F5B8002D62DF /* SNSearchViewController.m */; };
+		2844D09E1CF9F5B8002D62DF /* SNSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2844D09C1CF9F5B8002D62DF /* SNSearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +39,6 @@
 		2844D0641CF9F3F9002D62DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2844D0661CF9F3F9002D62DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2844D0671CF9F3F9002D62DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2844D0691CF9F3F9002D62DF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2844D06A1CF9F3F9002D62DF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2844D06D1CF9F3F9002D62DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2844D06F1CF9F3F9002D62DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2844D0721CF9F3F9002D62DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2844D0741CF9F3F9002D62DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +48,9 @@
 		2844D0841CF9F3F9002D62DF /* StoreSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoreSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2844D0881CF9F3F9002D62DF /* StoreSearchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreSearchUITests.m; sourceTree = "<group>"; };
 		2844D08A1CF9F3F9002D62DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2844D09A1CF9F5B8002D62DF /* SNSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSearchViewController.h; sourceTree = "<group>"; };
+		2844D09B1CF9F5B8002D62DF /* SNSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSearchViewController.m; sourceTree = "<group>"; };
+		2844D09C1CF9F5B8002D62DF /* SNSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNSearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +101,9 @@
 		2844D0621CF9F3F9002D62DF /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
+				2844D0961CF9F588002D62DF /* Classes */,
 				2844D0661CF9F3F9002D62DF /* AppDelegate.h */,
 				2844D0671CF9F3F9002D62DF /* AppDelegate.m */,
-				2844D0691CF9F3F9002D62DF /* ViewController.h */,
-				2844D06A1CF9F3F9002D62DF /* ViewController.m */,
-				2844D06C1CF9F3F9002D62DF /* Main.storyboard */,
 				2844D06F1CF9F3F9002D62DF /* Assets.xcassets */,
 				2844D0711CF9F3F9002D62DF /* LaunchScreen.storyboard */,
 				2844D0741CF9F3F9002D62DF /* Info.plist */,
@@ -138,6 +136,40 @@
 				2844D08A1CF9F3F9002D62DF /* Info.plist */,
 			);
 			path = StoreSearchUITests;
+			sourceTree = "<group>";
+		};
+		2844D0961CF9F588002D62DF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2844D0971CF9F588002D62DF /* Controller */,
+				2844D0981CF9F588002D62DF /* Model */,
+				2844D0991CF9F588002D62DF /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2844D0971CF9F588002D62DF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2844D09A1CF9F5B8002D62DF /* SNSearchViewController.h */,
+				2844D09B1CF9F5B8002D62DF /* SNSearchViewController.m */,
+				2844D09C1CF9F5B8002D62DF /* SNSearchViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2844D0981CF9F588002D62DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2844D0991CF9F588002D62DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,9 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2844D09E1CF9F5B8002D62DF /* SNSearchViewController.xib in Resources */,
 				2844D0731CF9F3F9002D62DF /* LaunchScreen.storyboard in Resources */,
 				2844D0701CF9F3F9002D62DF /* Assets.xcassets in Resources */,
-				2844D06E1CF9F3F9002D62DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +302,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2844D06B1CF9F3F9002D62DF /* ViewController.m in Sources */,
 				2844D0681CF9F3F9002D62DF /* AppDelegate.m in Sources */,
 				2844D0651CF9F3F9002D62DF /* main.m in Sources */,
+				2844D09D1CF9F5B8002D62DF /* SNSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,14 +340,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2844D06C1CF9F3F9002D62DF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2844D06D1CF9F3F9002D62DF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2844D0711CF9F3F9002D62DF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

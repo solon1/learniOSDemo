@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SNSearchViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+/** 搜索控制器 */
+@property (nonatomic,strong) SNSearchViewController *searchContrller;
 
 @end
 

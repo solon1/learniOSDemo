@@ -15,6 +15,7 @@
 		2844D0891CF9F3F9002D62DF /* StoreSearchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D0881CF9F3F9002D62DF /* StoreSearchUITests.m */; };
 		2844D09D1CF9F5B8002D62DF /* SNSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D09B1CF9F5B8002D62DF /* SNSearchViewController.m */; };
 		2844D09E1CF9F5B8002D62DF /* SNSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2844D09C1CF9F5B8002D62DF /* SNSearchViewController.xib */; };
+		2844D0A11CFA03C8002D62DF /* SNSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D0A01CFA03C8002D62DF /* SNSearchResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		2844D09A1CF9F5B8002D62DF /* SNSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSearchViewController.h; sourceTree = "<group>"; };
 		2844D09B1CF9F5B8002D62DF /* SNSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSearchViewController.m; sourceTree = "<group>"; };
 		2844D09C1CF9F5B8002D62DF /* SNSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNSearchViewController.xib; sourceTree = "<group>"; };
+		2844D09F1CFA03C8002D62DF /* SNSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSearchResult.h; sourceTree = "<group>"; };
+		2844D0A01CFA03C8002D62DF /* SNSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSearchResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,8 @@
 		2844D0981CF9F588002D62DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2844D09F1CFA03C8002D62DF /* SNSearchResult.h */,
+				2844D0A01CFA03C8002D62DF /* SNSearchResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 		2844D0581CF9F3F8002D62DF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SN;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = solon;
 				TargetAttributes = {
@@ -303,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2844D0681CF9F3F9002D62DF /* AppDelegate.m in Sources */,
+				2844D0A11CFA03C8002D62DF /* SNSearchResult.m in Sources */,
 				2844D0651CF9F3F9002D62DF /* main.m in Sources */,
 				2844D09D1CF9F5B8002D62DF /* SNSearchViewController.m in Sources */,
 			);

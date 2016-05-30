@@ -18,6 +18,8 @@
 		2844D0A11CFA03C8002D62DF /* SNSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D0A01CFA03C8002D62DF /* SNSearchResult.m */; };
 		2844D0A51CFB2B6A002D62DF /* SNSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D0A31CFB2B6A002D62DF /* SNSearchResultCell.m */; };
 		2844D0A61CFB2B6A002D62DF /* SNSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2844D0A41CFB2B6A002D62DF /* SNSearchResultCell.xib */; };
+		28498D1C1CFC7E3B00BF0A21 /* SNNothingFoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28498D1A1CFC7E3B00BF0A21 /* SNNothingFoundCell.m */; };
+		28498D1D1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28498D1B1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,9 @@
 		2844D0A21CFB2B6A002D62DF /* SNSearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSearchResultCell.h; sourceTree = "<group>"; };
 		2844D0A31CFB2B6A002D62DF /* SNSearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSearchResultCell.m; sourceTree = "<group>"; };
 		2844D0A41CFB2B6A002D62DF /* SNSearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNSearchResultCell.xib; sourceTree = "<group>"; };
+		28498D191CFC7E3B00BF0A21 /* SNNothingFoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNothingFoundCell.h; sourceTree = "<group>"; };
+		28498D1A1CFC7E3B00BF0A21 /* SNNothingFoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNothingFoundCell.m; sourceTree = "<group>"; };
+		28498D1B1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNNothingFoundCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +186,9 @@
 				2844D0A21CFB2B6A002D62DF /* SNSearchResultCell.h */,
 				2844D0A31CFB2B6A002D62DF /* SNSearchResultCell.m */,
 				2844D0A41CFB2B6A002D62DF /* SNSearchResultCell.xib */,
+				28498D191CFC7E3B00BF0A21 /* SNNothingFoundCell.h */,
+				28498D1A1CFC7E3B00BF0A21 /* SNNothingFoundCell.m */,
+				28498D1B1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +299,7 @@
 			files = (
 				2844D09E1CF9F5B8002D62DF /* SNSearchViewController.xib in Resources */,
 				2844D0A61CFB2B6A002D62DF /* SNSearchResultCell.xib in Resources */,
+				28498D1D1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib in Resources */,
 				2844D0731CF9F3F9002D62DF /* LaunchScreen.storyboard in Resources */,
 				2844D0701CF9F3F9002D62DF /* Assets.xcassets in Resources */,
 			);
@@ -320,6 +329,7 @@
 				2844D0681CF9F3F9002D62DF /* AppDelegate.m in Sources */,
 				2844D0A51CFB2B6A002D62DF /* SNSearchResultCell.m in Sources */,
 				2844D0A11CFA03C8002D62DF /* SNSearchResult.m in Sources */,
+				28498D1C1CFC7E3B00BF0A21 /* SNNothingFoundCell.m in Sources */,
 				2844D0651CF9F3F9002D62DF /* main.m in Sources */,
 				2844D09D1CF9F5B8002D62DF /* SNSearchViewController.m in Sources */,
 			);
@@ -537,6 +547,7 @@
 				2844D08F1CF9F3F9002D62DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2844D0901CF9F3F9002D62DF /* Build configuration list for PBXNativeTarget "StoreSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +556,7 @@
 				2844D0921CF9F3F9002D62DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2844D0931CF9F3F9002D62DF /* Build configuration list for PBXNativeTarget "StoreSearchUITests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +565,7 @@
 				2844D0951CF9F3F9002D62DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

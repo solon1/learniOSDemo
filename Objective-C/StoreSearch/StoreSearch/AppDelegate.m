@@ -15,6 +15,14 @@
 @implementation AppDelegate
 
 
+- (void)customizeAppearance
+{
+    UIColor *barTintColor = [UIColor colorWithRed:20/255.0f green:160/255.0f blue:160/255.0f alpha:1.0];
+    [[UISearchBar appearance] setBarTintColor:barTintColor];
+    
+    self.window.tintColor = [UIColor colorWithRed:10/255.0f green:80/255.0f blue:80/255.0f alpha:1.0];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -22,7 +30,7 @@
     self.window.rootViewController = self.searchContrller;
     
     [self.window makeKeyAndVisible];
-    
+    [self customizeAppearance];
     
     return YES;
 }

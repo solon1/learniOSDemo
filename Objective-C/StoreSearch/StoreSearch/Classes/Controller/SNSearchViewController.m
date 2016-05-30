@@ -9,8 +9,11 @@
 #import "SNSearchViewController.h"
 #import "SNSearchResult.h"
 #import "SNSearchResultCell.h"
+#import "SNNothingFoundCell.h"
 
-#define storeSearchCellId @"storeSearchCellId"
+
+static NSString * const SNSearchResultCellIdentifier = @"SNSearchResultCell";
+static NSString * const SNNothingFoundCellIdentifier = @"SNNothingFoundCell";
 
 @interface SNSearchViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
@@ -34,8 +37,12 @@
 - (void)setupMainView
 {
  
+    [self.searchBar becomeFirstResponder];
 //    [self.tableView registerClass:[SNSearchResultCell class] forCellReuseIdentifier:storeSearchCellId];
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SNSearchResultCell class]) bundle:nil] forCellReuseIdentifier:storeSearchCellId];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SNSearchResultCell class]) bundle:nil] forCellReuseIdentifier:SNSearchResultCellIdentifier];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:SNNothingFoundCellIdentifier bundle:nil] forCellReuseIdentifier:SNNothingFoundCellIdentifier];
+    
     self.tableView.rowHeight = 80.0f;
 
     
@@ -57,20 +64,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SNSearchResultCell *cell = [tableView dequeueReusableCellWithIdentifier:storeSearchCellId];
 
     
     if (_fakeArray.count) {
         
+        SNSearchResultCell *searchResultCell = [tableView dequeueReusableCellWithIdentifier:SNSearchResultCellIdentifier forIndexPath:indexPath];
+        
         SNSearchResult *searchResult = _fakeArray[indexPath.row];
-        cell.textLabel.text = searchResult.name;
-        cell.detailTextLabel.text = searchResult.artistName;
+        searchResultCell.nameLabel.text = searchResult.name;
+        searchResultCell.artistNameLabel.text = searchResult.artistName;
+        
+        return searchResultCell;
+
     }else {
-        cell.textLabel.text = @"not found";
+        SNNothingFoundCell *nothingFoundCell = [tableView dequeueReusableCellWithIdentifier:SNNothingFoundCellIdentifier forIndexPath:indexPath];
+        return nothingFoundCell;
     }
     
     
-    return cell;
 }
 
 #pragma mark - UITableViewDelegate

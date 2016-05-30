@@ -8,6 +8,7 @@
 
 #import "SNSearchViewController.h"
 #import "SNSearchResult.h"
+#import "SNSearchResultCell.h"
 
 #define storeSearchCellId @"storeSearchCellId"
 
@@ -33,7 +34,9 @@
 - (void)setupMainView
 {
  
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:storeSearchCellId];
+//    [self.tableView registerClass:[SNSearchResultCell class] forCellReuseIdentifier:storeSearchCellId];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SNSearchResultCell class]) bundle:nil] forCellReuseIdentifier:storeSearchCellId];
+    self.tableView.rowHeight = 80.0f;
 
     
 }
@@ -54,7 +57,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:storeSearchCellId];
+    SNSearchResultCell *cell = [tableView dequeueReusableCellWithIdentifier:storeSearchCellId];
 
     
     if (_fakeArray.count) {

@@ -102,20 +102,36 @@ static NSString * const SNNothingFoundCellIdentifier = @"SNNothingFoundCell";
 #pragma mark - UISearchBarDelegate
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    [searchBar resignFirstResponder];
-    _fakeArray = [NSMutableArray arrayWithCapacity:10];
+//    [searchBar resignFirstResponder];
+//    
+//    if (![searchBar.text isEqualToString:@"just"]) {
+//        for (int i = 0; i < 4; i++) {
+//            SNSearchResult *searchResult = [[SNSearchResult alloc]init];
+//            searchResult.name = [NSString stringWithFormat:@"Fake result %zd",i];
+//            searchResult.artistName = searchBar.text;
+//            [_fakeArray addObject:searchResult];
+//        }
+//
+//    }
     
-    if (![searchBar.text isEqualToString:@"just"]) {
-        for (int i = 0; i < 4; i++) {
-            SNSearchResult *searchResult = [[SNSearchResult alloc]init];
-            searchResult.name = [NSString stringWithFormat:@"Fake result %zd",i];
-            searchResult.artistName = searchBar.text;
-            [_fakeArray addObject:searchResult];
-        }
+    if (searchBar.text.length > 0) {
+        [searchBar resignFirstResponder];
+        _fakeArray = [NSMutableArray arrayWithCapacity:10];
+//        NSURL *url = [NSURL URLWithString:searchBar.text];
+        NSURL *url = [self urlWithSearchText:searchBar.text];
+        
         
     }
     
     [self.tableView reloadData];
+}
+
+
+- (NSURL *)urlWithSearchText:(NSString *)searchText
+{
+    NSString *urlString = [NSString stringWithFormat: @"http://itunes.apple.com/search?term=%@", searchText];
+    NSURL *url = [NSURL URLWithString:urlString];
+    return url;
 }
 
 - (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar

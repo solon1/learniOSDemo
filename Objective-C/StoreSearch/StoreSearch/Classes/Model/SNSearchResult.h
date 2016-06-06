@@ -14,5 +14,19 @@
 @property (nonatomic,copy) NSString *name;
 /** artistName */
 @property (nonatomic,copy) NSString *artistName;
+/** 60 * 60image */
+@property (nonatomic, copy) NSString *artworkURL60;
+/** 100 * 100 image */
+@property (nonatomic, copy) NSString *artworkURL100;
+
+@property (nonatomic, copy) NSString *storeURL;
+@property (nonatomic, copy) NSString *kind;
+/** 货币 */
+@property (nonatomic, copy) NSString *currency;
+@property (nonatomic, copy) NSDecimalNumber *price;
+/** 流派 */
+@property (nonatomic, copy) NSString *genre;
+
+- (NSComparisonResult)compareName:(SNSearchResult *)other;
 
 @end

@@ -10,4 +10,9 @@
 
 @implementation SNSearchResult
 
+- (NSComparisonResult)compareName:(SNSearchResult *)other
+{
+    return [_name localizedStandardCompare:other.name];
+}
+
 @end

@@ -10,10 +10,12 @@
 #import "SNSearchResult.h"
 #import "SNSearchResultCell.h"
 #import "SNNothingFoundCell.h"
-
+#import "SNLoadingCell.h"
 
 static NSString * const SNSearchResultCellIdentifier = @"SNSearchResultCell";
 static NSString * const SNNothingFoundCellIdentifier = @"SNNothingFoundCell";
+static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
+
 
 @interface SNSearchViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
@@ -26,6 +28,7 @@ static NSString * const SNNothingFoundCellIdentifier = @"SNNothingFoundCell";
 @implementation SNSearchViewController{
     
     NSMutableArray *_searchResults;
+    BOOL _isLoading;
 }
 
 - (void)viewDidLoad {
@@ -43,6 +46,8 @@ static NSString * const SNNothingFoundCellIdentifier = @"SNNothingFoundCell";
     
     [self.tableView registerNib:[UINib nibWithNibName:SNNothingFoundCellIdentifier bundle:nil] forCellReuseIdentifier:SNNothingFoundCellIdentifier];
     
+    [self.tableView registerNib:[UINib nibWithNibName:SNLoadingCellIdentifier bundle:nil] forCellReuseIdentifier:SNLoadingCellIdentifier];
+    
     self.tableView.rowHeight = 80.0f;
 
     
@@ -53,7 +58,9 @@ static NSString * const SNNothingFoundCellIdentifier = @"SNNothingFoundCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (_searchResults == nil) {
+    if (_isLoading) {
+        return 1;
+    }else if (_searchResults == nil) {
         return 0;
     }else if(_searchResults.count == 0){//当没有数据的时候提示用户没有找到
         return 1;
@@ -65,8 +72,16 @@ static NSString * const SNNothingFoundCellIdentifier = @"SNNothingFoundCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
+    if (_isLoading) {
     
-    if (_searchResults.count) {
+        SNLoadingCell *loadingCell = [tableView dequeueReusableCellWithIdentifier:SNLoadingCellIdentifier];
+        
+        UIActivityIndicatorView *spinner = (UIActivityIndicatorView *)[loadingCell viewWithTag:100];
+        [spinner startAnimating];
+        
+        return loadingCell;
+        
+    }else if (_searchResults.count) {
         
         SNSearchResultCell *searchResultCell = [tableView dequeueReusableCellWithIdentifier:SNSearchResultCellIdentifier forIndexPath:indexPath];
         
@@ -132,7 +147,7 @@ static NSString * const SNNothingFoundCellIdentifier = @"SNNothingFoundCell";
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_searchResults.count == 0) {
+    if (_searchResults.count == 0 || _isLoading) {
         return nil;
     }else {
         return indexPath;
@@ -156,25 +171,47 @@ static NSString * const SNNothingFoundCellIdentifier = @"SNNothingFoundCell";
     
     if (searchBar.text.length > 0) {
         [searchBar resignFirstResponder];
+        _isLoading = YES;
+        [self.tableView reloadData];
+        
         _searchResults = [NSMutableArray arrayWithCapacity:10];
 //        NSURL *url = [NSURL URLWithString:searchBar.text];
-        NSURL *url = [self urlWithSearchText:searchBar.text];
         
-        NSString *json = [self performStoreRequestWithURL:url];
-        if (json == nil) {
-            [self showNetworkError];
-            return;
-        }
-        NSDictionary *resultDictionary = [self parseJSON:json];
-        if (resultDictionary == nil) {
-            [self showNetworkError];
-            return;
-        }
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         
-        [self parseDictionary:resultDictionary];
-//        NSLog(@"url --- %@",resultDictionary);
-        [_searchResults sortUsingSelector:@selector(compareName:)];
-        [self.tableView reloadData];
+        dispatch_async(queue, ^{
+            NSURL *url = [self urlWithSearchText:searchBar.text];
+            
+            NSString *json = [self performStoreRequestWithURL:url];
+            
+            if (json == nil) {
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self showNetworkError];
+                });
+                return;
+            }
+            NSDictionary *resultDictionary = [self parseJSON:json];
+            
+            if (resultDictionary == nil) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self showNetworkError];
+                });
+                return;
+            }
+            
+            [self parseDictionary:resultDictionary];
+            //        NSLog(@"url --- %@",resultDictionary);
+            [_searchResults sortUsingSelector:@selector(compareName:)];
+            
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                        _isLoading = NO;
+                        [self.tableView reloadData];
+            });
+        });
+        
         
     }
     

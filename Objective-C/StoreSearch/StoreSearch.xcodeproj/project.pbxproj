@@ -20,6 +20,8 @@
 		2844D0A61CFB2B6A002D62DF /* SNSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2844D0A41CFB2B6A002D62DF /* SNSearchResultCell.xib */; };
 		28498D1C1CFC7E3B00BF0A21 /* SNNothingFoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28498D1A1CFC7E3B00BF0A21 /* SNNothingFoundCell.m */; };
 		28498D1D1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28498D1B1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib */; };
+		28FCB3FB1D06593B007A28C7 /* SNLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FCB3F91D06593B007A28C7 /* SNLoadingCell.m */; };
+		28FCB3FC1D06593B007A28C7 /* SNLoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28FCB3FA1D06593B007A28C7 /* SNLoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,9 @@
 		28498D191CFC7E3B00BF0A21 /* SNNothingFoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNothingFoundCell.h; sourceTree = "<group>"; };
 		28498D1A1CFC7E3B00BF0A21 /* SNNothingFoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNothingFoundCell.m; sourceTree = "<group>"; };
 		28498D1B1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNNothingFoundCell.xib; sourceTree = "<group>"; };
+		28FCB3F81D06593B007A28C7 /* SNLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNLoadingCell.h; sourceTree = "<group>"; };
+		28FCB3F91D06593B007A28C7 /* SNLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNLoadingCell.m; sourceTree = "<group>"; };
+		28FCB3FA1D06593B007A28C7 /* SNLoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNLoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +194,9 @@
 				28498D191CFC7E3B00BF0A21 /* SNNothingFoundCell.h */,
 				28498D1A1CFC7E3B00BF0A21 /* SNNothingFoundCell.m */,
 				28498D1B1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib */,
+				28FCB3F81D06593B007A28C7 /* SNLoadingCell.h */,
+				28FCB3F91D06593B007A28C7 /* SNLoadingCell.m */,
+				28FCB3FA1D06593B007A28C7 /* SNLoadingCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,6 +310,7 @@
 				28498D1D1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib in Resources */,
 				2844D0731CF9F3F9002D62DF /* LaunchScreen.storyboard in Resources */,
 				2844D0701CF9F3F9002D62DF /* Assets.xcassets in Resources */,
+				28FCB3FC1D06593B007A28C7 /* SNLoadingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +337,7 @@
 			files = (
 				2844D0681CF9F3F9002D62DF /* AppDelegate.m in Sources */,
 				2844D0A51CFB2B6A002D62DF /* SNSearchResultCell.m in Sources */,
+				28FCB3FB1D06593B007A28C7 /* SNLoadingCell.m in Sources */,
 				2844D0A11CFA03C8002D62DF /* SNSearchResult.m in Sources */,
 				28498D1C1CFC7E3B00BF0A21 /* SNNothingFoundCell.m in Sources */,
 				2844D0651CF9F3F9002D62DF /* main.m in Sources */,

@@ -11,6 +11,8 @@
 #import "SNSearchResultCell.h"
 #import "SNNothingFoundCell.h"
 #import "SNLoadingCell.h"
+#import "AFNetworking.h"
+
 
 static NSString * const SNSearchResultCellIdentifier = @"SNSearchResultCell";
 static NSString * const SNNothingFoundCellIdentifier = @"SNNothingFoundCell";

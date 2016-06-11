@@ -20,6 +20,8 @@
 		2844D0A61CFB2B6A002D62DF /* SNSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2844D0A41CFB2B6A002D62DF /* SNSearchResultCell.xib */; };
 		28498D1C1CFC7E3B00BF0A21 /* SNNothingFoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28498D1A1CFC7E3B00BF0A21 /* SNNothingFoundCell.m */; };
 		28498D1D1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28498D1B1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib */; };
+		28BF68971D0C0862002B7BCF /* SNDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BF68951D0C0862002B7BCF /* SNDetailViewController.m */; };
+		28BF68981D0C0862002B7BCF /* SNDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28BF68961D0C0862002B7BCF /* SNDetailViewController.xib */; };
 		28FCB3FB1D06593B007A28C7 /* SNLoadingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FCB3F91D06593B007A28C7 /* SNLoadingCell.m */; };
 		28FCB3FC1D06593B007A28C7 /* SNLoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28FCB3FA1D06593B007A28C7 /* SNLoadingCell.xib */; };
 		28FCB4211D0671E4007A28C7 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FCB4001D0671E4007A28C7 /* AFHTTPSessionManager.m */; };
@@ -81,6 +83,9 @@
 		28498D191CFC7E3B00BF0A21 /* SNNothingFoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNothingFoundCell.h; sourceTree = "<group>"; };
 		28498D1A1CFC7E3B00BF0A21 /* SNNothingFoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNothingFoundCell.m; sourceTree = "<group>"; };
 		28498D1B1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNNothingFoundCell.xib; sourceTree = "<group>"; };
+		28BF68941D0C0862002B7BCF /* SNDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNDetailViewController.h; sourceTree = "<group>"; };
+		28BF68951D0C0862002B7BCF /* SNDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNDetailViewController.m; sourceTree = "<group>"; };
+		28BF68961D0C0862002B7BCF /* SNDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNDetailViewController.xib; sourceTree = "<group>"; };
 		28FCB3F81D06593B007A28C7 /* SNLoadingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNLoadingCell.h; sourceTree = "<group>"; };
 		28FCB3F91D06593B007A28C7 /* SNLoadingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNLoadingCell.m; sourceTree = "<group>"; };
 		28FCB3FA1D06593B007A28C7 /* SNLoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SNLoadingCell.xib; sourceTree = "<group>"; };
@@ -221,6 +226,9 @@
 				2844D09A1CF9F5B8002D62DF /* SNSearchViewController.h */,
 				2844D09B1CF9F5B8002D62DF /* SNSearchViewController.m */,
 				2844D09C1CF9F5B8002D62DF /* SNSearchViewController.xib */,
+				28BF68941D0C0862002B7BCF /* SNDetailViewController.h */,
+				28BF68951D0C0862002B7BCF /* SNDetailViewController.m */,
+				28BF68961D0C0862002B7BCF /* SNDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -414,6 +422,7 @@
 				2844D0A61CFB2B6A002D62DF /* SNSearchResultCell.xib in Resources */,
 				28498D1D1CFC7E3B00BF0A21 /* SNNothingFoundCell.xib in Resources */,
 				2844D0731CF9F3F9002D62DF /* LaunchScreen.storyboard in Resources */,
+				28BF68981D0C0862002B7BCF /* SNDetailViewController.xib in Resources */,
 				2844D0701CF9F3F9002D62DF /* Assets.xcassets in Resources */,
 				28FCB3FC1D06593B007A28C7 /* SNLoadingCell.xib in Resources */,
 			);
@@ -441,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2844D0681CF9F3F9002D62DF /* AppDelegate.m in Sources */,
+				28BF68971D0C0862002B7BCF /* SNDetailViewController.m in Sources */,
 				28FCB4221D0671E4007A28C7 /* AFNetworkReachabilityManager.m in Sources */,
 				28FCB42B1D0671E4007A28C7 /* UIButton+AFNetworking.m in Sources */,
 				28FCB4281D0671E4007A28C7 /* AFImageDownloader.m in Sources */,

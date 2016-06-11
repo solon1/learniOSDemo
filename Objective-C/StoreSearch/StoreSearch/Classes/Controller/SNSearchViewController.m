@@ -12,6 +12,7 @@
 #import "SNNothingFoundCell.h"
 #import "SNLoadingCell.h"
 #import "AFNetworking.h"
+#import "SNDetailViewController.h"
 
 
 static NSString * const SNSearchResultCellIdentifier = @"SNSearchResultCell";
@@ -31,12 +32,22 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
     
     NSMutableArray *_searchResults;
     BOOL _isLoading;
+    AFHTTPSessionManager *_manager;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupMainView];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    
+    return self;
 }
 
 - (void)setupMainView
@@ -105,6 +116,15 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    SNDetailViewController *detailVC = [[SNDetailViewController alloc]initWithNibName:NSStringFromClass([SNDetailViewController class]) bundle:nil];
+    detailVC.view.frame = self.view.frame;
+    detailVC.searchResult = _searchResults[indexPath.row];
+    
+    [self.view addSubview:detailVC.view];
+    [self addChildViewController:detailVC];
+    [detailVC didMoveToParentViewController:self];
+    
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -119,61 +139,48 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
 #pragma mark - UISearchBarDelegate
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-//    [searchBar resignFirstResponder];
-//    
-//    if (![searchBar.text isEqualToString:@"just"]) {
-//        for (int i = 0; i < 4; i++) {
-//            SNSearchResult *searchResult = [[SNSearchResult alloc]init];
-//            searchResult.name = [NSString stringWithFormat:@"Fake result %zd",i];
-//            searchResult.artistName = searchBar.text;
-//            [_searchResults addObject:searchResult];
-//        }
-//
-//    }
     
     if (searchBar.text.length > 0) {
         [searchBar resignFirstResponder];
+        //当用户第二次点击的时候取消上一次点击的网络请求
+        [_manager.operationQueue cancelAllOperations];
+        
         _isLoading = YES;
         [self.tableView reloadData];
         
         _searchResults = [NSMutableArray arrayWithCapacity:10];
-//        NSURL *url = [NSURL URLWithString:searchBar.text];
         
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-        
-        dispatch_async(queue, ^{
             NSURL *url = [self urlWithSearchText:searchBar.text];
             
-            NSString *json = [self performStoreRequestWithURL:url];
-            
-            if (json == nil) {
+            [_manager GET:url.absoluteString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
                 
-                dispatch_async(dispatch_get_main_queue(), ^{
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                if (responseObject == nil) {
+                    
                     [self showNetworkError];
-                });
-                return;
-            }
-            NSDictionary *resultDictionary = [self parseJSON:json];
-            
-            if (resultDictionary == nil) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self showNetworkError];
-                });
-                return;
-            }
-            
-            [self parseDictionary:resultDictionary];
-            //        NSLog(@"url --- %@",resultDictionary);
-            [_searchResults sortUsingSelector:@selector(compareName:)];
-            
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    return;
+                }
                 
-                        _isLoading = NO;
-                        [self.tableView reloadData];
-            });
-        });
-        
+                [self parseDictionary:responseObject];
+                        NSLog(@"url --- %@",responseObject);
+                [_searchResults sortUsingSelector:@selector(compareName:)];
+                _isLoading = NO;
+                [self.tableView reloadData];
+                
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                //因为取消网络请求导致失败直接返回
+                for (NSOperation *operation in _manager.operationQueue.operations) {
+                    if (operation.isCancelled) {
+                        return;
+                    }
+                }
+                
+                [self showNetworkError];
+                _isLoading = NO;
+                [self.tableView reloadData];
+            }];
         
     }
     

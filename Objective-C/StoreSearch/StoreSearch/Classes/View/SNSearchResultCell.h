@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class SNSearchResult;
+
 @interface SNSearchResultCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistNameLabel;
 
+- (void)configureForSearchResult:(SNSearchResult *)searchResult;
 @end

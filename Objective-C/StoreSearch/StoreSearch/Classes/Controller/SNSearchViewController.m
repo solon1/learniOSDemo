@@ -88,18 +88,8 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
         SNSearchResultCell *searchResultCell = [tableView dequeueReusableCellWithIdentifier:SNSearchResultCellIdentifier forIndexPath:indexPath];
         
         SNSearchResult *searchResult = _searchResults[indexPath.row];
-        searchResultCell.nameLabel.text = searchResult.name;
-//        searchResultCell.artistNameLabel.text = searchResult.artistName;
-        NSString *artistName = searchResult.artistName;
         
-        if (artistName == nil) {
-            artistName = @"Unknown";
-        }
-        NSString *kind = [self kindForDisplay:searchResult.kind];
-        
-
-        searchResultCell.artistNameLabel.text = [NSString stringWithFormat:@"%@(%@)",artistName,kind];
-        
+        [searchResultCell configureForSearchResult:searchResult];
         
         return searchResultCell;
 
@@ -109,36 +99,6 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
     }
     
     
-}
-
-#pragma mark - 过滤接收的数据kind
-- (NSString *)kindForDisplay:(NSString *)kind
-{
-    if ([kind isEqualToString:@"album"]) {
-        return @"Album";
-    }else if ([kind isEqualToString:@"audiobook"]) {
-        return @"Audio Book";
-    } else if ([kind isEqualToString:@"book"]) {
-        return @"Book";
-    } else if ([kind isEqualToString:@"ebook"]) {
-        return @"E-Book";
-    } else if ([kind isEqualToString:@"feature-movie"]) {
-        return @"Movie";
-    } else if ([kind isEqualToString:@"music-video"]) {
-        return @"Music Video";
-    } else if ([kind isEqualToString:@"podcast"]) {
-        return @"Podcast";
-    } else if ([kind isEqualToString:@"software"]) {
-        return @"App";
-    } else if ([kind isEqualToString:@"song"]) {
-        return @"Song";
-    } else if ([kind isEqualToString:@"tv-episode"]) {
-        return @"TV Episode";
-    } else if (kind == nil) {
-        return @"UnknownKind";
-    }else {
-            return kind;
-    }
 }
 
 #pragma mark - UITableViewDelegate

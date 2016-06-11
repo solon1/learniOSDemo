@@ -27,7 +27,7 @@
                             <constraint firstAttribute="height" constant="27" id="Sr4-4X-Qx7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pT8-db-utE">
@@ -51,6 +51,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="artistNameLabel" destination="pT8-db-utE" id="eZJ-7D-vbV"/>
+                <outlet property="artworkImageView" destination="mYL-Vs-pWq" id="iLA-GL-KnD"/>
                 <outlet property="nameLabel" destination="PUO-L1-lga" id="0KA-oN-KQl"/>
             </connections>
         </tableViewCell>

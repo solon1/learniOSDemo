@@ -25,6 +25,7 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 
 @end
 
@@ -56,7 +57,7 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
     [self.searchBar becomeFirstResponder];
 //    [self.tableView registerClass:[SNSearchResultCell class] forCellReuseIdentifier:storeSearchCellId];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SNSearchResultCell class]) bundle:nil] forCellReuseIdentifier:SNSearchResultCellIdentifier];
-    
+    self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
     [self.tableView registerNib:[UINib nibWithNibName:SNNothingFoundCellIdentifier bundle:nil] forCellReuseIdentifier:SNNothingFoundCellIdentifier];
     
     [self.tableView registerNib:[UINib nibWithNibName:SNLoadingCellIdentifier bundle:nil] forCellReuseIdentifier:SNLoadingCellIdentifier];
@@ -65,7 +66,6 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
 
     
 }
-
 
 #pragma mark - UITableViewDataSource
 
@@ -84,9 +84,9 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    if (_isLoading) {
     
+    if (_isLoading) {
+        
         SNLoadingCell *loadingCell = [tableView dequeueReusableCellWithIdentifier:SNLoadingCellIdentifier];
         
         UIActivityIndicatorView *spinner = (UIActivityIndicatorView *)[loadingCell viewWithTag:100];
@@ -103,7 +103,7 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
         [searchResultCell configureForSearchResult:searchResult];
         
         return searchResultCell;
-
+        
     }else {
         SNNothingFoundCell *nothingFoundCell = [tableView dequeueReusableCellWithIdentifier:SNNothingFoundCellIdentifier forIndexPath:indexPath];
         return nothingFoundCell;
@@ -136,12 +136,29 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
     }
 }
 
+- (IBAction)segmentChange:(UISegmentedControl *)sender {
+    
+    switch (sender.selectedSegmentIndex) {
+        case 0:[self performSearch]; break;
+        case 1:[self performSearch]; break;
+        case 2:[self performSearch]; break;
+        case 3:[self performSearch]; break;
+
+    }
+}
+
 #pragma mark - UISearchBarDelegate
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     
-    if (searchBar.text.length > 0) {
-        [searchBar resignFirstResponder];
+    [self performSearch];
+    
+}
+
+- (void)performSearch
+{
+    if (self.searchBar.text.length > 0) {
+        [self.searchBar resignFirstResponder];
         //当用户第二次点击的时候取消上一次点击的网络请求
         [_manager.operationQueue cancelAllOperations];
         
@@ -150,40 +167,39 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
         
         _searchResults = [NSMutableArray arrayWithCapacity:10];
         
-            NSURL *url = [self urlWithSearchText:searchBar.text];
+        NSURL *url = [self urlWithSearchText:self.searchBar.text category:self.segmentControl.selectedSegmentIndex];
+        
+        [_manager GET:url.absoluteString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
             
-            [_manager GET:url.absoluteString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-                
-            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                if (responseObject == nil) {
-                    
-                    [self showNetworkError];
-                    
-                    return;
-                }
-                
-                [self parseDictionary:responseObject];
-                        NSLog(@"url --- %@",responseObject);
-                [_searchResults sortUsingSelector:@selector(compareName:)];
-                _isLoading = NO;
-                [self.tableView reloadData];
-                
-                
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                //因为取消网络请求导致失败直接返回
-                for (NSOperation *operation in _manager.operationQueue.operations) {
-                    if (operation.isCancelled) {
-                        return;
-                    }
-                }
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if (responseObject == nil) {
                 
                 [self showNetworkError];
-                _isLoading = NO;
-                [self.tableView reloadData];
-            }];
+                
+                return;
+            }
+            
+            [self parseDictionary:responseObject];
+            NSLog(@"url --- %@",responseObject);
+            [_searchResults sortUsingSelector:@selector(compareName:)];
+            _isLoading = NO;
+            [self.tableView reloadData];
+            
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            //因为取消网络请求导致失败直接返回
+            for (NSOperation *operation in _manager.operationQueue.operations) {
+                if (operation.isCancelled) {
+                    return;
+                }
+            }
+            
+            [self showNetworkError];
+            _isLoading = NO;
+            [self.tableView reloadData];
+        }];
         
     }
-    
 }
 
 #pragma mark - parseDictionary
@@ -341,14 +357,22 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
 }
 
 #pragma mark - 将搜索内容转为url
-- (NSURL *)urlWithSearchText:(NSString *)searchText
+- (NSURL *)urlWithSearchText:(NSString *)searchText category:(NSInteger)category
 {
-//    NSString *escapedSearchText = [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *categoryName;
+    switch (category) {
+        case 0: categoryName = @""; break;
+        case 1: categoryName = @"musicTrack"; break;
+        case 2: categoryName = @"software"; break;
+        case 3: categoryName = @"audiobook"; break;
+    }
+    
+    
     NSCharacterSet *charSet = [NSCharacterSet URLPathAllowedCharacterSet];
     NSString *escapedSearchText = [searchText stringByAddingPercentEncodingWithAllowedCharacters:charSet];
     
     
-    NSString *urlString = [NSString stringWithFormat: @"http://itunes.apple.com/search?term=%@", escapedSearchText];
+    NSString *urlString = [NSString stringWithFormat: @"http://itunes.apple.com/search?term=%@&limit=200&entity=%@", escapedSearchText,categoryName];
     NSURL *url = [NSURL URLWithString:urlString];
     return url;
 }

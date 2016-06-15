@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor clearColor];
     self.popupView.layer.cornerRadius = 10.0f;
     UIImage *image = [[UIImage imageNamed:@"PriceButton"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];

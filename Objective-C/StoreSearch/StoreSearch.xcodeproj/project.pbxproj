@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281A4D521D0F079100723D9D /* SNGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A4D511D0F079100723D9D /* SNGradientView.m */; };
 		2844D0651CF9F3F9002D62DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D0641CF9F3F9002D62DF /* main.m */; };
 		2844D0681CF9F3F9002D62DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2844D0671CF9F3F9002D62DF /* AppDelegate.m */; };
 		2844D0701CF9F3F9002D62DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2844D06F1CF9F3F9002D62DF /* Assets.xcassets */; };
@@ -59,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		281A4D501D0F079100723D9D /* SNGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNGradientView.h; sourceTree = "<group>"; };
+		281A4D511D0F079100723D9D /* SNGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNGradientView.m; sourceTree = "<group>"; };
 		2844D0601CF9F3F9002D62DF /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2844D0641CF9F3F9002D62DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2844D0661CF9F3F9002D62DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 				28FCB3F81D06593B007A28C7 /* SNLoadingCell.h */,
 				28FCB3F91D06593B007A28C7 /* SNLoadingCell.m */,
 				28FCB3FA1D06593B007A28C7 /* SNLoadingCell.xib */,
+				281A4D501D0F079100723D9D /* SNGradientView.h */,
+				281A4D511D0F079100723D9D /* SNGradientView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 				2844D0A11CFA03C8002D62DF /* SNSearchResult.m in Sources */,
 				28FCB4271D0671E4007A28C7 /* AFAutoPurgingImageCache.m in Sources */,
 				28FCB42C1D0671E4007A28C7 /* UIImageView+AFNetworking.m in Sources */,
+				281A4D521D0F079100723D9D /* SNGradientView.m in Sources */,
 				28498D1C1CFC7E3B00BF0A21 /* SNNothingFoundCell.m in Sources */,
 				28FCB4231D0671E4007A28C7 /* AFSecurityPolicy.m in Sources */,
 				28FCB4241D0671E4007A28C7 /* AFURLRequestSerialization.m in Sources */,

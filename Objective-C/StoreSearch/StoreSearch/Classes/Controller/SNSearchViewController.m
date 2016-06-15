@@ -116,7 +116,7 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    [self.searchBar resignFirstResponder];
     SNDetailViewController *detailVC = [[SNDetailViewController alloc]initWithNibName:NSStringFromClass([SNDetailViewController class]) bundle:nil];
     detailVC.view.frame = self.view.frame;
     detailVC.searchResult = _searchResults[indexPath.row];

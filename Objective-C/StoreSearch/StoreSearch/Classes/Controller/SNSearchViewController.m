@@ -121,9 +121,7 @@ static NSString * const SNLoadingCellIdentifier = @"SNLoadingCell";
     detailVC.view.frame = self.view.frame;
     detailVC.searchResult = _searchResults[indexPath.row];
     
-    [self.view addSubview:detailVC.view];
-    [self addChildViewController:detailVC];
-    [detailVC didMoveToParentViewController:self];
+    [detailVC presentInParentViewController:self];
     
 }
 

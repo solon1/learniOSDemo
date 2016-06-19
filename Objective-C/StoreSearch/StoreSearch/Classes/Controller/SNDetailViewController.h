@@ -15,4 +15,7 @@
 /** SNSearchResult */
 @property (nonatomic,strong) SNSearchResult *searchResult;
 
+- (void)presentInParentViewController:(UIViewController *)parentViewController;
+- (void)dismissFromParentViewController;
+
 @end

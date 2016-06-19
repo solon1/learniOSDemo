@@ -8,6 +8,7 @@
 
 #import "SNDetailViewController.h"
 #import "SNSearchResult.h"
+#import "SNGradientView.h"
 #import "UIImageView+AFNetworking.h"
 @interface SNDetailViewController ()<UIGestureRecognizerDelegate>
 
@@ -23,6 +24,9 @@
 @end
 
 @implementation SNDetailViewController
+{
+    SNGradientView *_gradientView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -81,9 +85,65 @@
 
 - (IBAction)close:(UIButton *)sender {
     
+    [self dismissFromParentViewController];
+}
+
+- (void)dismissFromParentViewController
+{
     [self willMoveToParentViewController:nil];
-    [self.view removeFromSuperview];
-    [self removeFromParentViewController];
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        CGRect rect = self.view.bounds;
+        rect.origin.y += rect.size.height;
+        self.view.frame = rect;
+        _gradientView.alpha = 0.0f;
+        
+    } completion:^(BOOL finished) {
+        
+        [self.view removeFromSuperview];
+        [self removeFromParentViewController];
+        [_gradientView removeFromSuperview];
+    }];
+    
+}
+
+- (void)presentInParentViewController:(UIViewController *)parentViewController
+{
+    _gradientView = [[SNGradientView alloc]initWithFrame:self.view.bounds];
+
+    self.view.frame = parentViewController.view.bounds;
+    [parentViewController.view addSubview:_gradientView];
+    [parentViewController.view addSubview:self.view];
+    [parentViewController addChildViewController:self];
+    //渐变动画
+    CABasicAnimation *fadeAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeAnimation.duration = 0.2f;
+    fadeAnimation.fromValue = @0.0f;
+    fadeAnimation.toValue = @1.0f;
+    [_gradientView.layer addAnimation:fadeAnimation forKey:@"fadeAnimation"];
+    
+    
+    //添加关键帧动画
+    CAKeyframeAnimation *bounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    bounceAnimation.duration = 0.4;
+    bounceAnimation.delegate = self;
+    
+    bounceAnimation.values = @[@0.7,@1.2,@0.9,@1.0];
+    bounceAnimation.keyTimes = @[@0.0,@0.334,@0.666,@1.0];
+    
+    bounceAnimation.timingFunctions = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    
+    [self.view.layer addAnimation:bounceAnimation forKey:@"bounceAnimation"];
+    
+    
+    
+    
+//    [self didMoveToParentViewController:parentViewController];
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    [self didMoveToParentViewController:self.parentViewController];
 }
 
 - (void)dealloc

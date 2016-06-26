@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		284679E71D1D2D580029ADCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 284679E61D1D2D580029ADCD /* main.m */; };
+		284679EA1D1D2D580029ADCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 284679E91D1D2D580029ADCD /* AppDelegate.m */; };
+		284679ED1D1D2D580029ADCD /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 284679EC1D1D2D580029ADCD /* ViewController.mm */; };
+		284679F01D1D2D580029ADCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284679EE1D1D2D580029ADCD /* Main.storyboard */; };
+		284679F21D1D2D580029ADCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 284679F11D1D2D580029ADCD /* Assets.xcassets */; };
+		284679F51D1D2D580029ADCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284679F31D1D2D580029ADCD /* LaunchScreen.storyboard */; };
+		28467A001D1D2D580029ADCD /* hijack_solonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 284679FF1D1D2D580029ADCD /* hijack_solonTests.m */; };
+		28467A0B1D1D2D580029ADCD /* hijack_solonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28467A0A1D1D2D580029ADCD /* hijack_solonUITests.m */; };
+		28467A1A1D1D361A0029ADCD /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28467A191D1D361A0029ADCD /* Accelerate.framework */; };
+		28668D641D1D36BC00540C67 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28668D631D1D36BC00540C67 /* QuartzCore.framework */; };
+		28668D661D1D36D400540C67 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28668D651D1D36D400540C67 /* AudioToolbox.framework */; };
+		28668D681D1D36F100540C67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28668D671D1D36F000540C67 /* CoreGraphics.framework */; };
+		28668D6A1D1D372700540C67 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28668D691D1D372700540C67 /* OpenGLES.framework */; };
+		28668D801D1D3C5200540C67 /* aurio_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28668D731D1D3C5200540C67 /* aurio_helper.cpp */; };
+		28668D811D1D3C5200540C67 /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28668D751D1D3C5200540C67 /* CADebugMacros.cpp */; };
+		28668D821D1D3C5200540C67 /* CADebugPrintf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28668D771D1D3C5200540C67 /* CADebugPrintf.cpp */; };
+		28668D831D1D3C5200540C67 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28668D7A1D1D3C5200540C67 /* CAStreamBasicDescription.cpp */; };
+		28668D841D1D3C5200540C67 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28668D7C1D1D3C5200540C67 /* CAXException.cpp */; };
+		28668D851D1D3C5200540C67 /* HiJackMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28668D7F1D1D3C5200540C67 /* HiJackMgr.mm */; };
+		28668D8D1D1D3D0D00540C67 /* fft_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 28668D871D1D3D0D00540C67 /* fft_off.png */; };
+		28668D8E1D1D3D0D00540C67 /* fft_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 28668D881D1D3D0D00540C67 /* fft_on.png */; };
+		28668D8F1D1D3D0D00540C67 /* mute_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 28668D891D1D3D0D00540C67 /* mute_off.png */; };
+		28668D901D1D3D0D00540C67 /* mute_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 28668D8A1D1D3D0D00540C67 /* mute_on.png */; };
+		28668D911D1D3D0D00540C67 /* oscilloscope.png in Resources */ = {isa = PBXBuildFile; fileRef = 28668D8B1D1D3D0D00540C67 /* oscilloscope.png */; };
+		28668D921D1D3D0D00540C67 /* sonogram.png in Resources */ = {isa = PBXBuildFile; fileRef = 28668D8C1D1D3D0D00540C67 /* sonogram.png */; };
+		28668D9C1D1D3D1700540C67 /* rad2fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 28668D941D1D3D1700540C67 /* rad2fft.c */; };
+		28668D9D1D1D3D1700540C67 /* SpectrumAnalysis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28668D961D1D3D1700540C67 /* SpectrumAnalysis.cpp */; };
+		28668D9E1D1D3D1700540C67 /* FFTBufferManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28668D981D1D3D1700540C67 /* FFTBufferManager.cpp */; };
+		28668D9F1D1D3D1700540C67 /* FFTHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28668D9B1D1D3D1700540C67 /* FFTHelper.mm */; };
+		28668DA21D1D3D2600540C67 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28668DA11D1D3D2600540C67 /* EAGLView.m */; };
+		28668DA41D1D3D3300540C67 /* button_press.caf in Resources */ = {isa = PBXBuildFile; fileRef = 28668DA31D1D3D3300540C67 /* button_press.caf */; };
+		28668DA81D1D3D7B00540C67 /* mo_audio.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28668DA61D1D3D7B00540C67 /* mo_audio.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		284679FC1D1D2D580029ADCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 284679DA1D1D2D580029ADCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 284679E11D1D2D580029ADCD;
+			remoteInfo = hijack_solon;
+		};
+		28467A071D1D2D580029ADCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 284679DA1D1D2D580029ADCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 284679E11D1D2D580029ADCD;
+			remoteInfo = hijack_solon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		284679E21D1D2D580029ADCD /* hijack_solon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hijack_solon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		284679E61D1D2D580029ADCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		284679E81D1D2D580029ADCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		284679E91D1D2D580029ADCD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		284679EB1D1D2D580029ADCD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		284679EC1D1D2D580029ADCD /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		284679EF1D1D2D580029ADCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		284679F11D1D2D580029ADCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		284679F41D1D2D580029ADCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		284679F61D1D2D580029ADCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		284679FB1D1D2D580029ADCD /* hijack_solonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hijack_solonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		284679FF1D1D2D580029ADCD /* hijack_solonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hijack_solonTests.m; sourceTree = "<group>"; };
+		28467A011D1D2D580029ADCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28467A061D1D2D580029ADCD /* hijack_solonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hijack_solonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28467A0A1D1D2D580029ADCD /* hijack_solonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hijack_solonUITests.m; sourceTree = "<group>"; };
+		28467A0C1D1D2D580029ADCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28467A191D1D361A0029ADCD /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		28668D631D1D36BC00540C67 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		28668D651D1D36D400540C67 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		28668D671D1D36F000540C67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28668D691D1D372700540C67 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		28668D731D1D3C5200540C67 /* aurio_helper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aurio_helper.cpp; sourceTree = "<group>"; };
+		28668D741D1D3C5200540C67 /* aurio_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aurio_helper.h; sourceTree = "<group>"; };
+		28668D751D1D3C5200540C67 /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugMacros.cpp; sourceTree = "<group>"; };
+		28668D761D1D3C5200540C67 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		28668D771D1D3C5200540C67 /* CADebugPrintf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugPrintf.cpp; sourceTree = "<group>"; };
+		28668D781D1D3C5200540C67 /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugPrintf.h; sourceTree = "<group>"; };
+		28668D791D1D3C5200540C67 /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		28668D7A1D1D3C5200540C67 /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		28668D7B1D1D3C5200540C67 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		28668D7C1D1D3C5200540C67 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		28668D7D1D1D3C5200540C67 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		28668D7E1D1D3C5200540C67 /* HiJackMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HiJackMgr.h; sourceTree = "<group>"; };
+		28668D7F1D1D3C5200540C67 /* HiJackMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HiJackMgr.mm; sourceTree = "<group>"; };
+		28668D871D1D3D0D00540C67 /* fft_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fft_off.png; sourceTree = "<group>"; };
+		28668D881D1D3D0D00540C67 /* fft_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fft_on.png; sourceTree = "<group>"; };
+		28668D891D1D3D0D00540C67 /* mute_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mute_off.png; sourceTree = "<group>"; };
+		28668D8A1D1D3D0D00540C67 /* mute_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mute_on.png; sourceTree = "<group>"; };
+		28668D8B1D1D3D0D00540C67 /* oscilloscope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oscilloscope.png; sourceTree = "<group>"; };
+		28668D8C1D1D3D0D00540C67 /* sonogram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sonogram.png; sourceTree = "<group>"; };
+		28668D941D1D3D1700540C67 /* rad2fft.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rad2fft.c; sourceTree = "<group>"; };
+		28668D951D1D3D1700540C67 /* rad2fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rad2fft.h; sourceTree = "<group>"; };
+		28668D961D1D3D1700540C67 /* SpectrumAnalysis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpectrumAnalysis.cpp; sourceTree = "<group>"; };
+		28668D971D1D3D1700540C67 /* SpectrumAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectrumAnalysis.h; sourceTree = "<group>"; };
+		28668D981D1D3D1700540C67 /* FFTBufferManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FFTBufferManager.cpp; sourceTree = "<group>"; };
+		28668D991D1D3D1700540C67 /* FFTBufferManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTBufferManager.h; sourceTree = "<group>"; };
+		28668D9A1D1D3D1700540C67 /* FFTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTHelper.h; sourceTree = "<group>"; };
+		28668D9B1D1D3D1700540C67 /* FFTHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFTHelper.mm; sourceTree = "<group>"; };
+		28668DA01D1D3D2600540C67 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		28668DA11D1D3D2600540C67 /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
+		28668DA31D1D3D3300540C67 /* button_press.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = button_press.caf; sourceTree = "<group>"; };
+		28668DA51D1D3D7B00540C67 /* mo_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_audio.h; sourceTree = "<group>"; };
+		28668DA61D1D3D7B00540C67 /* mo_audio.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mo_audio.mm; sourceTree = "<group>"; };
+		28668DA71D1D3D7B00540C67 /* mo_def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mo_def.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		284679DF1D1D2D580029ADCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28668D6A1D1D372700540C67 /* OpenGLES.framework in Frameworks */,
+				28668D681D1D36F100540C67 /* CoreGraphics.framework in Frameworks */,
+				28668D661D1D36D400540C67 /* AudioToolbox.framework in Frameworks */,
+				28668D641D1D36BC00540C67 /* QuartzCore.framework in Frameworks */,
+				28467A1A1D1D361A0029ADCD /* Accelerate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284679F81D1D2D580029ADCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28467A031D1D2D580029ADCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		284679D91D1D2D580029ADCD = {
+			isa = PBXGroup;
+			children = (
+				28467A181D1D2D6A0029ADCD /* Lib */,
+				284679E41D1D2D580029ADCD /* hijack_solon */,
+				284679FE1D1D2D580029ADCD /* hijack_solonTests */,
+				28467A091D1D2D580029ADCD /* hijack_solonUITests */,
+				284679E31D1D2D580029ADCD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		284679E31D1D2D580029ADCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				284679E21D1D2D580029ADCD /* hijack_solon.app */,
+				284679FB1D1D2D580029ADCD /* hijack_solonTests.xctest */,
+				28467A061D1D2D580029ADCD /* hijack_solonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		284679E41D1D2D580029ADCD /* hijack_solon */ = {
+			isa = PBXGroup;
+			children = (
+				284679E81D1D2D580029ADCD /* AppDelegate.h */,
+				284679E91D1D2D580029ADCD /* AppDelegate.m */,
+				284679EB1D1D2D580029ADCD /* ViewController.h */,
+				284679EC1D1D2D580029ADCD /* ViewController.mm */,
+				284679EE1D1D2D580029ADCD /* Main.storyboard */,
+				284679F11D1D2D580029ADCD /* Assets.xcassets */,
+				284679F31D1D2D580029ADCD /* LaunchScreen.storyboard */,
+				284679F61D1D2D580029ADCD /* Info.plist */,
+				284679E51D1D2D580029ADCD /* Supporting Files */,
+			);
+			path = hijack_solon;
+			sourceTree = "<group>";
+		};
+		284679E51D1D2D580029ADCD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				284679E61D1D2D580029ADCD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		284679FE1D1D2D580029ADCD /* hijack_solonTests */ = {
+			isa = PBXGroup;
+			children = (
+				284679FF1D1D2D580029ADCD /* hijack_solonTests.m */,
+				28467A011D1D2D580029ADCD /* Info.plist */,
+			);
+			path = hijack_solonTests;
+			sourceTree = "<group>";
+		};
+		28467A091D1D2D580029ADCD /* hijack_solonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				28467A0A1D1D2D580029ADCD /* hijack_solonUITests.m */,
+				28467A0C1D1D2D580029ADCD /* Info.plist */,
+			);
+			path = hijack_solonUITests;
+			sourceTree = "<group>";
+		};
+		28467A181D1D2D6A0029ADCD /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				28668DA51D1D3D7B00540C67 /* mo_audio.h */,
+				28668DA61D1D3D7B00540C67 /* mo_audio.mm */,
+				28668DA71D1D3D7B00540C67 /* mo_def.h */,
+				28668DA31D1D3D3300540C67 /* button_press.caf */,
+				28668DA01D1D3D2600540C67 /* EAGLView.h */,
+				28668DA11D1D3D2600540C67 /* EAGLView.m */,
+				28668D711D1D3C4000540C67 /* HiJack */,
+				28668D691D1D372700540C67 /* OpenGLES.framework */,
+				28668D671D1D36F000540C67 /* CoreGraphics.framework */,
+				28668D651D1D36D400540C67 /* AudioToolbox.framework */,
+				28668D631D1D36BC00540C67 /* QuartzCore.framework */,
+				28467A191D1D361A0029ADCD /* Accelerate.framework */,
+			);
+			name = Lib;
+			path = hijack_solon/Lib;
+			sourceTree = "<group>";
+		};
+		28668D711D1D3C4000540C67 /* HiJack */ = {
+			isa = PBXGroup;
+			children = (
+				28668D931D1D3D1700540C67 /* fft */,
+				28668D981D1D3D1700540C67 /* FFTBufferManager.cpp */,
+				28668D991D1D3D1700540C67 /* FFTBufferManager.h */,
+				28668D9A1D1D3D1700540C67 /* FFTHelper.h */,
+				28668D9B1D1D3D1700540C67 /* FFTHelper.mm */,
+				28668D861D1D3D0D00540C67 /* images */,
+				28668D721D1D3C5200540C67 /* lib */,
+			);
+			path = HiJack;
+			sourceTree = "<group>";
+		};
+		28668D721D1D3C5200540C67 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				28668D731D1D3C5200540C67 /* aurio_helper.cpp */,
+				28668D741D1D3C5200540C67 /* aurio_helper.h */,
+				28668D751D1D3C5200540C67 /* CADebugMacros.cpp */,
+				28668D761D1D3C5200540C67 /* CADebugMacros.h */,
+				28668D771D1D3C5200540C67 /* CADebugPrintf.cpp */,
+				28668D781D1D3C5200540C67 /* CADebugPrintf.h */,
+				28668D791D1D3C5200540C67 /* CAMath.h */,
+				28668D7A1D1D3C5200540C67 /* CAStreamBasicDescription.cpp */,
+				28668D7B1D1D3C5200540C67 /* CAStreamBasicDescription.h */,
+				28668D7C1D1D3C5200540C67 /* CAXException.cpp */,
+				28668D7D1D1D3C5200540C67 /* CAXException.h */,
+				28668D7E1D1D3C5200540C67 /* HiJackMgr.h */,
+				28668D7F1D1D3C5200540C67 /* HiJackMgr.mm */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		28668D861D1D3D0D00540C67 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				28668D871D1D3D0D00540C67 /* fft_off.png */,
+				28668D881D1D3D0D00540C67 /* fft_on.png */,
+				28668D891D1D3D0D00540C67 /* mute_off.png */,
+				28668D8A1D1D3D0D00540C67 /* mute_on.png */,
+				28668D8B1D1D3D0D00540C67 /* oscilloscope.png */,
+				28668D8C1D1D3D0D00540C67 /* sonogram.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		28668D931D1D3D1700540C67 /* fft */ = {
+			isa = PBXGroup;
+			children = (
+				28668D941D1D3D1700540C67 /* rad2fft.c */,
+				28668D951D1D3D1700540C67 /* rad2fft.h */,
+				28668D961D1D3D1700540C67 /* SpectrumAnalysis.cpp */,
+				28668D971D1D3D1700540C67 /* SpectrumAnalysis.h */,
+			);
+			path = fft;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		284679E11D1D2D580029ADCD /* hijack_solon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28467A0F1D1D2D580029ADCD /* Build configuration list for PBXNativeTarget "hijack_solon" */;
+			buildPhases = (
+				284679DE1D1D2D580029ADCD /* Sources */,
+				284679DF1D1D2D580029ADCD /* Frameworks */,
+				284679E01D1D2D580029ADCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hijack_solon;
+			productName = hijack_solon;
+			productReference = 284679E21D1D2D580029ADCD /* hijack_solon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		284679FA1D1D2D580029ADCD /* hijack_solonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28467A121D1D2D580029ADCD /* Build configuration list for PBXNativeTarget "hijack_solonTests" */;
+			buildPhases = (
+				284679F71D1D2D580029ADCD /* Sources */,
+				284679F81D1D2D580029ADCD /* Frameworks */,
+				284679F91D1D2D580029ADCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				284679FD1D1D2D580029ADCD /* PBXTargetDependency */,
+			);
+			name = hijack_solonTests;
+			productName = hijack_solonTests;
+			productReference = 284679FB1D1D2D580029ADCD /* hijack_solonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		28467A051D1D2D580029ADCD /* hijack_solonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28467A151D1D2D580029ADCD /* Build configuration list for PBXNativeTarget "hijack_solonUITests" */;
+			buildPhases = (
+				28467A021D1D2D580029ADCD /* Sources */,
+				28467A031D1D2D580029ADCD /* Frameworks */,
+				28467A041D1D2D580029ADCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28467A081D1D2D580029ADCD /* PBXTargetDependency */,
+			);
+			name = hijack_solonUITests;
+			productName = hijack_solonUITests;
+			productReference = 28467A061D1D2D580029ADCD /* hijack_solonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		284679DA1D1D2D580029ADCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = solon;
+				TargetAttributes = {
+					284679E11D1D2D580029ADCD = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					284679FA1D1D2D580029ADCD = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 284679E11D1D2D580029ADCD;
+					};
+					28467A051D1D2D580029ADCD = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 284679E11D1D2D580029ADCD;
+					};
+				};
+			};
+			buildConfigurationList = 284679DD1D1D2D580029ADCD /* Build configuration list for PBXProject "hijack_solon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 284679D91D1D2D580029ADCD;
+			productRefGroup = 284679E31D1D2D580029ADCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				284679E11D1D2D580029ADCD /* hijack_solon */,
+				284679FA1D1D2D580029ADCD /* hijack_solonTests */,
+				28467A051D1D2D580029ADCD /* hijack_solonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		284679E01D1D2D580029ADCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28668D921D1D3D0D00540C67 /* sonogram.png in Resources */,
+				28668D901D1D3D0D00540C67 /* mute_on.png in Resources */,
+				28668D8E1D1D3D0D00540C67 /* fft_on.png in Resources */,
+				28668D911D1D3D0D00540C67 /* oscilloscope.png in Resources */,
+				28668D8D1D1D3D0D00540C67 /* fft_off.png in Resources */,
+				284679F51D1D2D580029ADCD /* LaunchScreen.storyboard in Resources */,
+				284679F21D1D2D580029ADCD /* Assets.xcassets in Resources */,
+				28668D8F1D1D3D0D00540C67 /* mute_off.png in Resources */,
+				28668DA41D1D3D3300540C67 /* button_press.caf in Resources */,
+				284679F01D1D2D580029ADCD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284679F91D1D2D580029ADCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28467A041D1D2D580029ADCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		284679DE1D1D2D580029ADCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28668D821D1D3C5200540C67 /* CADebugPrintf.cpp in Sources */,
+				28668D801D1D3C5200540C67 /* aurio_helper.cpp in Sources */,
+				28668D9E1D1D3D1700540C67 /* FFTBufferManager.cpp in Sources */,
+				28668DA81D1D3D7B00540C67 /* mo_audio.mm in Sources */,
+				28668DA21D1D3D2600540C67 /* EAGLView.m in Sources */,
+				28668D9F1D1D3D1700540C67 /* FFTHelper.mm in Sources */,
+				284679ED1D1D2D580029ADCD /* ViewController.mm in Sources */,
+				284679EA1D1D2D580029ADCD /* AppDelegate.m in Sources */,
+				28668D9D1D1D3D1700540C67 /* SpectrumAnalysis.cpp in Sources */,
+				28668D841D1D3C5200540C67 /* CAXException.cpp in Sources */,
+				28668D9C1D1D3D1700540C67 /* rad2fft.c in Sources */,
+				28668D811D1D3C5200540C67 /* CADebugMacros.cpp in Sources */,
+				284679E71D1D2D580029ADCD /* main.m in Sources */,
+				28668D831D1D3C5200540C67 /* CAStreamBasicDescription.cpp in Sources */,
+				28668D851D1D3C5200540C67 /* HiJackMgr.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		284679F71D1D2D580029ADCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28467A001D1D2D580029ADCD /* hijack_solonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28467A021D1D2D580029ADCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28467A0B1D1D2D580029ADCD /* hijack_solonUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		284679FD1D1D2D580029ADCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 284679E11D1D2D580029ADCD /* hijack_solon */;
+			targetProxy = 284679FC1D1D2D580029ADCD /* PBXContainerItemProxy */;
+		};
+		28467A081D1D2D580029ADCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 284679E11D1D2D580029ADCD /* hijack_solon */;
+			targetProxy = 28467A071D1D2D580029ADCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		284679EE1D1D2D580029ADCD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				284679EF1D1D2D580029ADCD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		284679F31D1D2D580029ADCD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				284679F41D1D2D580029ADCD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28467A0D1D1D2D580029ADCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		28467A0E1D1D2D580029ADCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28467A101D1D2D580029ADCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = hijack_solon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/hijack_solon/Lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.solonpu.hijack-solon";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		28467A111D1D2D580029ADCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = hijack_solon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/hijack_solon/Lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.solonpu.hijack-solon";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Release;
+		};
+		28467A131D1D2D580029ADCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = hijack_solonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.solonpu.hijack-solonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hijack_solon.app/hijack_solon";
+			};
+			name = Debug;
+		};
+		28467A141D1D2D580029ADCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = hijack_solonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.solonpu.hijack-solonTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hijack_solon.app/hijack_solon";
+			};
+			name = Release;
+		};
+		28467A161D1D2D580029ADCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = hijack_solonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.solonpu.hijack-solonUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = hijack_solon;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		28467A171D1D2D580029ADCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = hijack_solonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.solonpu.hijack-solonUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = hijack_solon;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		284679DD1D1D2D580029ADCD /* Build configuration list for PBXProject "hijack_solon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28467A0D1D1D2D580029ADCD /* Debug */,
+				28467A0E1D1D2D580029ADCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28467A0F1D1D2D580029ADCD /* Build configuration list for PBXNativeTarget "hijack_solon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28467A101D1D2D580029ADCD /* Debug */,
+				28467A111D1D2D580029ADCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28467A121D1D2D580029ADCD /* Build configuration list for PBXNativeTarget "hijack_solonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28467A131D1D2D580029ADCD /* Debug */,
+				28467A141D1D2D580029ADCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28467A151D1D2D580029ADCD /* Build configuration list for PBXNativeTarget "hijack_solonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28467A161D1D2D580029ADCD /* Debug */,
+				28467A171D1D2D580029ADCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 284679DA1D1D2D580029ADCD /* Project object */;
+}

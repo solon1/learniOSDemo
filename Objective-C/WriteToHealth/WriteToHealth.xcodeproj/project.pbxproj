@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		288498721D40A05600984A2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 288498711D40A05600984A2D /* main.m */; };
+		288498751D40A05600984A2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 288498741D40A05600984A2D /* AppDelegate.m */; };
+		288498781D40A05600984A2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 288498771D40A05600984A2D /* ViewController.m */; };
+		2884987B1D40A05600984A2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288498791D40A05600984A2D /* Main.storyboard */; };
+		2884987D1D40A05600984A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2884987C1D40A05600984A2D /* Assets.xcassets */; };
+		288498801D40A05600984A2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2884987E1D40A05600984A2D /* LaunchScreen.storyboard */; };
+		2884988B1D40A05600984A2D /* WriteToHealthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2884988A1D40A05600984A2D /* WriteToHealthTests.m */; };
+		288498961D40A05600984A2D /* WriteToHealthUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 288498951D40A05600984A2D /* WriteToHealthUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		288498871D40A05600984A2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 288498651D40A05600984A2D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2884986C1D40A05600984A2D;
+			remoteInfo = WriteToHealth;
+		};
+		288498921D40A05600984A2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 288498651D40A05600984A2D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2884986C1D40A05600984A2D;
+			remoteInfo = WriteToHealth;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2884986D1D40A05600984A2D /* WriteToHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WriteToHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		288498711D40A05600984A2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		288498731D40A05600984A2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		288498741D40A05600984A2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		288498761D40A05600984A2D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		288498771D40A05600984A2D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2884987A1D40A05600984A2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2884987C1D40A05600984A2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2884987F1D40A05600984A2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		288498811D40A05600984A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		288498861D40A05600984A2D /* WriteToHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WriteToHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2884988A1D40A05600984A2D /* WriteToHealthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriteToHealthTests.m; sourceTree = "<group>"; };
+		2884988C1D40A05600984A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		288498911D40A05600984A2D /* WriteToHealthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WriteToHealthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		288498951D40A05600984A2D /* WriteToHealthUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WriteToHealthUITests.m; sourceTree = "<group>"; };
+		288498971D40A05600984A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2884986A1D40A05600984A2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		288498831D40A05600984A2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2884988E1D40A05600984A2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		288498641D40A05600984A2D = {
+			isa = PBXGroup;
+			children = (
+				2884986F1D40A05600984A2D /* WriteToHealth */,
+				288498891D40A05600984A2D /* WriteToHealthTests */,
+				288498941D40A05600984A2D /* WriteToHealthUITests */,
+				2884986E1D40A05600984A2D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2884986E1D40A05600984A2D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2884986D1D40A05600984A2D /* WriteToHealth.app */,
+				288498861D40A05600984A2D /* WriteToHealthTests.xctest */,
+				288498911D40A05600984A2D /* WriteToHealthUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2884986F1D40A05600984A2D /* WriteToHealth */ = {
+			isa = PBXGroup;
+			children = (
+				288498731D40A05600984A2D /* AppDelegate.h */,
+				288498741D40A05600984A2D /* AppDelegate.m */,
+				288498761D40A05600984A2D /* ViewController.h */,
+				288498771D40A05600984A2D /* ViewController.m */,
+				288498791D40A05600984A2D /* Main.storyboard */,
+				2884987C1D40A05600984A2D /* Assets.xcassets */,
+				2884987E1D40A05600984A2D /* LaunchScreen.storyboard */,
+				288498811D40A05600984A2D /* Info.plist */,
+				288498701D40A05600984A2D /* Supporting Files */,
+			);
+			path = WriteToHealth;
+			sourceTree = "<group>";
+		};
+		288498701D40A05600984A2D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				288498711D40A05600984A2D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		288498891D40A05600984A2D /* WriteToHealthTests */ = {
+			isa = PBXGroup;
+			children = (
+				2884988A1D40A05600984A2D /* WriteToHealthTests.m */,
+				2884988C1D40A05600984A2D /* Info.plist */,
+			);
+			path = WriteToHealthTests;
+			sourceTree = "<group>";
+		};
+		288498941D40A05600984A2D /* WriteToHealthUITests */ = {
+			isa = PBXGroup;
+			children = (
+				288498951D40A05600984A2D /* WriteToHealthUITests.m */,
+				288498971D40A05600984A2D /* Info.plist */,
+			);
+			path = WriteToHealthUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2884986C1D40A05600984A2D /* WriteToHealth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2884989A1D40A05600984A2D /* Build configuration list for PBXNativeTarget "WriteToHealth" */;
+			buildPhases = (
+				288498691D40A05600984A2D /* Sources */,
+				2884986A1D40A05600984A2D /* Frameworks */,
+				2884986B1D40A05600984A2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WriteToHealth;
+			productName = WriteToHealth;
+			productReference = 2884986D1D40A05600984A2D /* WriteToHealth.app */;
+			productType = "com.apple.product-type.application";
+		};
+		288498851D40A05600984A2D /* WriteToHealthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2884989D1D40A05600984A2D /* Build configuration list for PBXNativeTarget "WriteToHealthTests" */;
+			buildPhases = (
+				288498821D40A05600984A2D /* Sources */,
+				288498831D40A05600984A2D /* Frameworks */,
+				288498841D40A05600984A2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				288498881D40A05600984A2D /* PBXTargetDependency */,
+			);
+			name = WriteToHealthTests;
+			productName = WriteToHealthTests;
+			productReference = 288498861D40A05600984A2D /* WriteToHealthTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		288498901D40A05600984A2D /* WriteToHealthUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 288498A01D40A05600984A2D /* Build configuration list for PBXNativeTarget "WriteToHealthUITests" */;
+			buildPhases = (
+				2884988D1D40A05600984A2D /* Sources */,
+				2884988E1D40A05600984A2D /* Frameworks */,
+				2884988F1D40A05600984A2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				288498931D40A05600984A2D /* PBXTargetDependency */,
+			);
+			name = WriteToHealthUITests;
+			productName = WriteToHealthUITests;
+			productReference = 288498911D40A05600984A2D /* WriteToHealthUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		288498651D40A05600984A2D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = solon;
+				TargetAttributes = {
+					2884986C1D40A05600984A2D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					288498851D40A05600984A2D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 2884986C1D40A05600984A2D;
+					};
+					288498901D40A05600984A2D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 2884986C1D40A05600984A2D;
+					};
+				};
+			};
+			buildConfigurationList = 288498681D40A05600984A2D /* Build configuration list for PBXProject "WriteToHealth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 288498641D40A05600984A2D;
+			productRefGroup = 2884986E1D40A05600984A2D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2884986C1D40A05600984A2D /* WriteToHealth */,
+				288498851D40A05600984A2D /* WriteToHealthTests */,
+				288498901D40A05600984A2D /* WriteToHealthUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2884986B1D40A05600984A2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				288498801D40A05600984A2D /* LaunchScreen.storyboard in Resources */,
+				2884987D1D40A05600984A2D /* Assets.xcassets in Resources */,
+				2884987B1D40A05600984A2D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		288498841D40A05600984A2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2884988F1D40A05600984A2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		288498691D40A05600984A2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				288498781D40A05600984A2D /* ViewController.m in Sources */,
+				288498751D40A05600984A2D /* AppDelegate.m in Sources */,
+				288498721D40A05600984A2D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		288498821D40A05600984A2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2884988B1D40A05600984A2D /* WriteToHealthTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2884988D1D40A05600984A2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				288498961D40A05600984A2D /* WriteToHealthUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		288498881D40A05600984A2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2884986C1D40A05600984A2D /* WriteToHealth */;
+			targetProxy = 288498871D40A05600984A2D /* PBXContainerItemProxy */;
+		};
+		288498931D40A05600984A2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2884986C1D40A05600984A2D /* WriteToHealth */;
+			targetProxy = 288498921D40A05600984A2D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		288498791D40A05600984A2D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2884987A1D40A05600984A2D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2884987E1D40A05600984A2D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2884987F1D40A05600984A2D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		288498981D40A05600984A2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		288498991D40A05600984A2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2884989B1D40A05600984A2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WriteToHealth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.solonpu.WriteToHealth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2884989C1D40A05600984A2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WriteToHealth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.solonpu.WriteToHealth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2884989E1D40A05600984A2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WriteToHealthTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.solonpu.WriteToHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WriteToHealth.app/WriteToHealth";
+			};
+			name = Debug;
+		};
+		2884989F1D40A05600984A2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WriteToHealthTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.solonpu.WriteToHealthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WriteToHealth.app/WriteToHealth";
+			};
+			name = Release;
+		};
+		288498A11D40A05600984A2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WriteToHealthUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.solonpu.WriteToHealthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WriteToHealth;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		288498A21D40A05600984A2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WriteToHealthUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.solonpu.WriteToHealthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WriteToHealth;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		288498681D40A05600984A2D /* Build configuration list for PBXProject "WriteToHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				288498981D40A05600984A2D /* Debug */,
+				288498991D40A05600984A2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2884989A1D40A05600984A2D /* Build configuration list for PBXNativeTarget "WriteToHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2884989B1D40A05600984A2D /* Debug */,
+				2884989C1D40A05600984A2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2884989D1D40A05600984A2D /* Build configuration list for PBXNativeTarget "WriteToHealthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2884989E1D40A05600984A2D /* Debug */,
+				2884989F1D40A05600984A2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		288498A01D40A05600984A2D /* Build configuration list for PBXNativeTarget "WriteToHealthUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				288498A11D40A05600984A2D /* Debug */,
+				288498A21D40A05600984A2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 288498651D40A05600984A2D /* Project object */;
+}

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  hijack_solon
+//  DecodeAudio
 //
-//  Created by solon on 16/6/24.
+//  Created by solon on 16/7/15.
 //  Copyright © 2016年 solon. All rights reserved.
 //
 

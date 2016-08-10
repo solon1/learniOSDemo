@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="录音接收的数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KF-97-B7u">
+                                <rect key="frame" x="240" y="290" width="119" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReceivedData" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-gw-9nb">
+                                <rect key="frame" x="247" y="340" width="106" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lC-6u-zb4">
+                                <rect key="frame" x="370" y="179" width="60" height="30"/>
+                                <state key="normal" title="停止录音"/>
+                                <connections>
+                                    <action selector="stopRecordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="548-rd-n7Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3f-Hm-KSn">
+                                <rect key="frame" x="170" y="179" width="60" height="30"/>
+                                <state key="normal" title="开始录音"/>
+                                <connections>
+                                    <action selector="startRecordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kmt-9c-JFP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwN-5x-pp2">
+                                <rect key="frame" x="170" y="217" width="60" height="30"/>
+                                <state key="normal" title="暂停录音"/>
+                                <connections>
+                                    <action selector="pauseRecordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oq8-sx-Rlm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkH-C0-8It">
+                                <rect key="frame" x="370" y="217" width="60" height="30"/>
+                                <state key="normal" title="恢复录音"/>
+                                <connections>
+                                    <action selector="resumeRecordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="35c-Go-bXJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MwN-5x-pp2" firstAttribute="top" secondItem="d3f-Hm-KSn" secondAttribute="bottom" constant="8" id="Eh5-cJ-h7V"/>
+                            <constraint firstItem="MjT-gw-9nb" firstAttribute="top" secondItem="3KF-97-B7u" secondAttribute="bottom" constant="30" id="Fgo-2G-yMG"/>
+                            <constraint firstItem="3KF-97-B7u" firstAttribute="top" secondItem="8lC-6u-zb4" secondAttribute="bottom" constant="81" id="NI7-4S-HmH"/>
+                            <constraint firstItem="MjT-gw-9nb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OHf-pZ-yD6"/>
+                            <constraint firstItem="3KF-97-B7u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WeV-LR-QtF"/>
+                            <constraint firstItem="MwN-5x-pp2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-100" id="dws-lU-n7F"/>
+                            <constraint firstItem="3KF-97-B7u" firstAttribute="top" secondItem="d3f-Hm-KSn" secondAttribute="bottom" constant="81" id="e8z-8r-vBY"/>
+                            <constraint firstItem="dkH-C0-8It" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="100" id="p9Z-qG-nhK"/>
+                            <constraint firstItem="3KF-97-B7u" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="w9B-wX-Biq"/>
+                            <constraint firstItem="d3f-Hm-KSn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-100" id="wDQ-mo-uBj"/>
+                            <constraint firstItem="dkH-C0-8It" firstAttribute="bottom" secondItem="MwN-5x-pp2" secondAttribute="bottom" id="wQk-Ma-LyW"/>
+                            <constraint firstItem="8lC-6u-zb4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="100" id="xqZ-WG-10Z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="receivedLabel" destination="MjT-gw-9nb" id="BSF-nh-oEI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

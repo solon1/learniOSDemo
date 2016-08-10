@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		284679E71D1D2D580029ADCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 284679E61D1D2D580029ADCD /* main.m */; };
-		284679EA1D1D2D580029ADCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 284679E91D1D2D580029ADCD /* AppDelegate.m */; };
+		284679EA1D1D2D580029ADCD /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 284679E91D1D2D580029ADCD /* AppDelegate.mm */; };
 		284679ED1D1D2D580029ADCD /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 284679EC1D1D2D580029ADCD /* ViewController.mm */; };
 		284679F01D1D2D580029ADCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284679EE1D1D2D580029ADCD /* Main.storyboard */; };
 		284679F21D1D2D580029ADCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 284679F11D1D2D580029ADCD /* Assets.xcassets */; };
@@ -62,7 +62,7 @@
 		284679E21D1D2D580029ADCD /* hijack_solon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hijack_solon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		284679E61D1D2D580029ADCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		284679E81D1D2D580029ADCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		284679E91D1D2D580029ADCD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		284679E91D1D2D580029ADCD /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		284679EB1D1D2D580029ADCD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		284679EC1D1D2D580029ADCD /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		284679EF1D1D2D580029ADCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				284679E81D1D2D580029ADCD /* AppDelegate.h */,
-				284679E91D1D2D580029ADCD /* AppDelegate.m */,
+				284679E91D1D2D580029ADCD /* AppDelegate.mm */,
 				284679EB1D1D2D580029ADCD /* ViewController.h */,
 				284679EC1D1D2D580029ADCD /* ViewController.mm */,
 				284679EE1D1D2D580029ADCD /* Main.storyboard */,
@@ -430,7 +430,7 @@
 				28668DA21D1D3D2600540C67 /* EAGLView.m in Sources */,
 				28668D9F1D1D3D1700540C67 /* FFTHelper.mm in Sources */,
 				284679ED1D1D2D580029ADCD /* ViewController.mm in Sources */,
-				284679EA1D1D2D580029ADCD /* AppDelegate.m in Sources */,
+				284679EA1D1D2D580029ADCD /* AppDelegate.mm in Sources */,
 				28668D9D1D1D3D1700540C67 /* SpectrumAnalysis.cpp in Sources */,
 				28668D841D1D3C5200540C67 /* CAXException.cpp in Sources */,
 				28668D9C1D1D3D1700540C67 /* rad2fft.c in Sources */,

@@ -24,13 +24,59 @@
                                     <action selector="blueToothAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fiv-rg-9aL"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="写入数据" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-j4-JVq">
+                                <rect key="frame" x="225" y="231" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="dh6-xD-nkM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUz-ja-Cfd">
+                                <rect key="frame" x="150" y="333" width="300" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="WlH-yP-3iY"/>
+                                    <constraint firstAttribute="height" constant="200" id="dvk-XC-154"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dvk-XC-154"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW4-M4-Qn2">
+                                <rect key="frame" x="385" y="231" width="30" height="30"/>
+                                <state key="normal" title="发送"/>
+                                <connections>
+                                    <action selector="sendAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gvM-fe-coO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PW4-M4-Qn2" firstAttribute="centerY" secondItem="fpf-j4-JVq" secondAttribute="centerY" id="DnQ-Gr-Gfc"/>
                             <constraint firstItem="EZq-DA-rQq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FtN-jQ-BNm"/>
+                            <constraint firstItem="fpf-j4-JVq" firstAttribute="top" secondItem="EZq-DA-rQq" secondAttribute="bottom" constant="84" id="Lcg-GP-pBN"/>
                             <constraint firstItem="EZq-DA-rQq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="97" id="QFc-Zn-kkd"/>
+                            <constraint firstItem="wUz-ja-Cfd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T4d-RT-Kkv"/>
+                            <constraint firstItem="PW4-M4-Qn2" firstAttribute="leading" secondItem="fpf-j4-JVq" secondAttribute="trailing" constant="10" id="j0v-s9-kmZ"/>
+                            <constraint firstItem="fpf-j4-JVq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rwO-Xv-44o"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wUz-ja-Cfd" secondAttribute="bottom" constant="50" id="vPi-V9-Gna"/>
+                            <constraint firstItem="wUz-ja-Cfd" firstAttribute="top" secondItem="fpf-j4-JVq" secondAttribute="bottom" constant="72" id="zl8-Pf-p8s"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vPi-V9-Gna"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="receivedLabel" destination="wUz-ja-Cfd" id="gWx-fg-8oY"/>
+                        <outlet property="writeDataTextField" destination="fpf-j4-JVq" id="FeC-ow-mtr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

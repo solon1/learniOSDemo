@@ -13,15 +13,29 @@
 
 @property (nonatomic,strong) CBCentralManager *SNCentralManager;
 @property (nonatomic,strong) NSMutableArray<CBPeripheral *> *peripherals;
+@property (weak, nonatomic) IBOutlet UILabel *receivedLabel;
+@property (weak, nonatomic) IBOutlet UITextField *writeDataTextField;
+@property (nonatomic,strong) CBCharacteristic *characteristic;
 
 @end
 
 @implementation ViewController
 
+
+
+- (IBAction)sendAction:(UIButton *)sender {
+    
+    NSString *valueStr = self.writeDataTextField.text;
+    NSData *value = [NSData dataWithBytes:[valueStr UTF8String] length:valueStr.length];
+    CBPeripheral *peripheral = self.peripherals.firstObject;
+    [self peripheral:peripheral writeValueForCharacteristic:self.characteristic value:value];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+
     _peripherals = [NSMutableArray array];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -89,10 +103,13 @@
      UUID ：三个服务 battery device information
      
      */
-    
+
     [self.peripherals addObject:peripheral];
-    [central connectPeripheral:peripheral options:nil];
-    NSLog(@"peripheral name :%@ \n peripheral identifier : %@",peripheral.name,peripheral.identifier);
+    if ([peripheral.name containsString:@"BT05"]) {
+        
+        [central connectPeripheral:peripheral options:nil];
+        NSLog(@"peripheral name :%@ \n peripheral identifier : %@",peripheral.name,peripheral.identifier.UUIDString);
+    }
 }
 
 #pragma mark - 蓝牙连接状态
@@ -126,7 +143,7 @@
     }
     
     for (CBService *service in peripheral.services) {
-        NSLog(@"uuid - %@",service.UUID);
+        NSLog(@"uuid - %@",service.UUID.UUIDString);
         //根据服务发现特征回调peripheral:didDiscoverCharacteristicsForService:error:
         [peripheral discoverCharacteristics:nil forService:service];
     }
@@ -142,17 +159,36 @@
     }
     
     for (CBCharacteristic *characteristic in service.characteristics) {
-        NSLog(@"service : %@ 的 characteristic : %@",service.UUID,characteristic.UUID);
+        NSLog(@"service : %@ 的 characteristic : %@",service.UUID.UUIDString,characteristic.UUID.UUIDString);
         //读取characteristic 如果读取到会进入代理方法
         //peripheral:didUpdateValueForCharacteristic:error:
         [peripheral readValueForCharacteristic:characteristic];
-        
+       
         //发现characteristic的descriptors 发现后会调用代理方法
         //peripheral:didDiscoverDescriptorsForCharacteristic:error:
         [peripheral discoverDescriptorsForCharacteristic:characteristic];
+        if (![characteristic.UUID.UUIDString isEqualToString:@"FFE1"]) {
+            return;
+        }
+        
+        //订阅想要的特征的值会进入代理
+        //peripheral:didUpdateNotificationStateForCharacteristic:error:
+        self.characteristic = characteristic;
+        [peripheral setNotifyValue:YES forCharacteristic:characteristic];
     }
 }
 
+//订阅想要的特征的值会进入代理
+- (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
+{
+    if (error) {
+        NSLog(@"didupdate notification error %@",error.localizedDescription);
+        return;
+    }
+
+    NSString *valueStr = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+    self.receivedLabel.text = valueStr;
+}
 
 //读取characteristic的值
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
@@ -161,7 +197,23 @@
         NSLog(@"read characteristic erro : %@",error.localizedDescription);
         return;
     }
-    NSLog(@"read data length - %zd  uuid : %@ value is - %@",characteristic.value.length,characteristic.UUID,characteristic.value);
+//    if ([characteristic.UUID.UUIDString isEqualToString:@"0000FFE1-0000-1000-8000-00805F9B34FB"]) {
+//        NSString *readValueStr = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+//    if (![characteristic.UUID.UUIDString isEqualToString:@"FFE1"]) {
+//        return;
+//    }
+    
+    NSData *charData = characteristic.value;
+    
+    Byte *byteNu = (Byte *)[charData bytes];
+    
+        NSLog(@"read data length - %zd  uuid : %@ value is - %s",charData.length,characteristic.UUID.UUIDString,byteNu);
+    self.receivedLabel.text = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+//        NSString *valueStr = @"solon 666666";
+//        NSData *value = [NSData dataWithBytes:[valueStr UTF8String] length:valueStr.length];
+//        [self peripheral:peripheral writeValueForCharacteristic:characteristic value:value];
+//    }
+    
 }
 
 //写数据
@@ -185,6 +237,8 @@
     
     if (characteristic.properties & CBCharacteristicPropertyWrite) {
         [peripheral writeValue:value forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
+        NSLog(@"characteristic UUID : %@ 写入成功",characteristic.UUID);
+        
     }else {
         NSLog(@"characteristic %@ can't write",characteristic.UUID);
     }

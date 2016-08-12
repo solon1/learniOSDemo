@@ -16,6 +16,9 @@ static NSString * const serviceUUIDStr = @"519ADA84-E427-4E55-BBF5-517B49BDBDE8"
 @interface ViewController ()<CBPeripheralManagerDelegate>
 
 @property (nonatomic,strong) CBPeripheralManager *peripheralManager;
+@property (nonatomic,strong) CBMutableCharacteristic *characteristic1;
+@property (nonatomic,strong) CBMutableCharacteristic *characteristic2;
+
 
 @end
 
@@ -78,6 +81,41 @@ static NSString * const serviceUUIDStr = @"519ADA84-E427-4E55-BBF5-517B49BDBDE8"
     }
 }
 
+//如果有central请求读取会调用此方法
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request
+{
+    //首先判断central 请求的特征是否符合外设特征的UUID
+    if ([request.characteristic.UUID isEqual:self.characteristic1]) {
+        //还需要判断请求读写的位置是否越界
+        if (request.offset > self.characteristic1.value.length) {
+            [_peripheralManager respondToRequest:request withResult:CBATTErrorInvalidOffset];
+        }
+        //未越界则可以将本地特征中的值赋给请求
+        request.value = [self.characteristic1.value subdataWithRange:NSMakeRange(request.offset, self.characteristic1.value.length - request.offset)];
+        //读取成功响应
+        [_peripheralManager respondToRequest:request withResult:CBATTErrorSuccess];
+    }
+    
+    
+}
+//如果有central请求写入会调用此方法
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray<CBATTRequest *> *)requests
+{
+    CBATTRequest *request = requests[0];
+    self.characteristic1.value = request.value;
+
+    
+}
+
+//当有central端订阅了特征，如果特征发生更新就会通知central
+- (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic
+{
+    NSLog(@"characteristic - %@",characteristic);
+    NSData *value = self.characteristic1.value;
+    BOOL didSendValue = [_peripheralManager updateValue:value forCharacteristic:(CBMutableCharacteristic *)characteristic onSubscribedCentrals:nil];
+    
+    NSLog(@"send success %@",(didSendValue ? @"Yes" : @"NO"));
+}
 
 #pragma mark - privateMethod
 - (void)setup{
@@ -92,7 +130,9 @@ static NSString * const serviceUUIDStr = @"519ADA84-E427-4E55-BBF5-517B49BDBDE8"
      value因为服务被缓存后为只读，设置nil在后面可以动态写入内容
      */
     CBMutableCharacteristic *characteristic1 = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID1 properties:CBCharacteristicPropertyRead value:nil permissions:CBAttributePermissionsReadable];
+    self.characteristic1 = characteristic1;
     CBMutableCharacteristic *characteristic2 = [[CBMutableCharacteristic alloc] initWithType:characteristicUUID2 properties:CBCharacteristicPropertyWrite value:nil permissions:CBAttributePermissionsWriteable];
+    self.characteristic2 = characteristic2;
     //服务的UUID
     CBUUID *serviceUUID = [CBUUID UUIDWithString:serviceUUIDStr];
     CBMutableService *service = [[CBMutableService alloc] initWithType:serviceUUID primary:YES];

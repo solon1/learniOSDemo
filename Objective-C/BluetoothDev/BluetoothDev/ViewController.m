@@ -7,7 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "SGHolderDetectedResult.h"
 #import <CoreBluetooth/CoreBluetooth.h>
+
+static NSString * const sixHundredValues = @"1I1P1W242C2L2V373M424J515I606G6U767H7Q7Z888H8P8Y969B9F9I9L9O9Q9R9S9S9S9S9R9R9Q9P9P9P9P9P9P9P9O9P9P9P9P9O9O9O9O9O9O9O9O9O9P9P9P9P9P9P9P9P9P9P9P9P9P9P9P9P9P9P9P9Q9Q9Q9Q9Q9Q9P9P9P9P9P9P9P9O9N9M9L9J9I9F9D9A95918W8P8H81755P3W28130G07000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 
 @interface ViewController ()<CBCentralManagerDelegate,CBPeripheralDelegate>
 
@@ -16,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *receivedLabel;
 @property (weak, nonatomic) IBOutlet UITextField *writeDataTextField;
 @property (nonatomic,strong) CBCharacteristic *characteristic;
+@property (nonatomic,strong) NSMutableString *allReceivedValues;
+
+@property (nonatomic,strong) NSMutableArray *pefGroups;
 
 @end
 
@@ -32,13 +38,85 @@
     
 }
 
+- (NSMutableArray *)pefGroups
+{
+    if (!_pefGroups) {
+        _pefGroups = [NSMutableArray array];
+    }
+    return _pefGroups;
+}
+
+- (NSMutableString *)allReceivedValues
+{
+    if (!_allReceivedValues) {
+        _allReceivedValues = [[NSMutableString alloc] init];
+    }
+    return _allReceivedValues;
+}
+
+//保存检测人检测结果
+//void saveHolderDetectedGrap(HolderDetectedResult holderDetectedResult) throws Exception {
+//    //转为字符串
+//    String str_grap =holderDetectedResult.getPefGrap();
+//
+//    //字符串有值
+//    if(!StringUtils.isEmpty(str_grap)){
+//        //
+//        List<HolderDetectedGrap>  graplst=new ArrayList<HolderDetectedGrap>();
+//        HolderDetectedGrap  obj_grap=null;
+//        BigDecimal fvc=null;
+//        int pef_value=0;
+//        int pef_value_sum=0;
+//        int step = ('9' - '0' + 1) + ('Z' - 'A' + 1);//进制数36
+//        char ch,ch2;
+//        long starttime=new Date().getTime();
+//        for(int i=0;i<str_grap.length()/2;i++ ){
+//            ch=str_grap.charAt(i*2);
+//            if(ch > '9'){
+//                ch -= 'A' - ('9' + 1);
+//            }
+//            ch2=str_grap.charAt(i*2+1);
+//            if(ch2 > '9'){
+//                ch2 -= 'A' - ('9' + 1);
+//            }
+//            //把字符串进制转换为 数字
+//            pef_value	=(ch- '0') * step + (ch2-'0');
+//
+//            pef_value_sum+=pef_value;
+//
+//            obj_grap=new HolderDetectedGrap();
+//            obj_grap.setDetectedDate(holderDetectedResult.getDetectedDate());
+//            obj_grap.setPefValue(BigDecimal.valueOf(pef_value));
+//            obj_grap.setOrder(i+1);
+//
+//            fvc = new BigDecimal(Double.valueOf(pef_value_sum)/100/60)
+//            .setScale(4, BigDecimal.ROUND_HALF_UP);//后面是保留4位小数四舍五入
+//
+//            obj_grap.setFvcValue(fvc);//pef/100/60
+//            graplst.add(obj_grap);
+//        }
+//
+//        holderDetectedResult.setDetectedGraps(graplst);
+//
+//        detectedResultDao.merge(holderDetectedResult);
+//        System.out.println("saveHolderDetectedGrap use time :"+(new Date().getTime()-starttime)/1000);
+//    }
+//}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+//    SGHolderDetectedResult *result = [[SGHolderDetectedResult alloc] init];
+//    result.pefGroup = sixHundredValues;
+//    NSLog(@"hhhh \n%@",result.pefGroups);
+    
 
     _peripherals = [NSMutableArray array];
     // Do any additional setup after loading the view, typically from a nib.
 }
+
+
 
 #pragma mark - buttonAction
 - (IBAction)blueToothAction:(UIButton *)sender {
@@ -105,7 +183,7 @@
      */
 
     [self.peripherals addObject:peripheral];
-    if ([peripheral.name containsString:@"BT05"]) {
+    if ([peripheral.name containsString:@"B1163"]) {
         
         [central connectPeripheral:peripheral options:nil];
         NSLog(@"peripheral name :%@ \n peripheral identifier : %@",peripheral.name,peripheral.identifier.UUIDString);
@@ -119,6 +197,7 @@
     //处理蓝牙外设的数据设置代理
     peripheral.delegate = self;
     NSLog(@"连接到设备名为%@ -- 成功",peripheral.name);
+    [central stopScan];//连接到设备停止扫描设备
     //发现外设服务回调peripheral:didDiscoverServices:
     [peripheral discoverServices:nil];
 }
@@ -205,10 +284,28 @@
     
     NSData *charData = characteristic.value;
     
-    Byte *byteNu = (Byte *)[charData bytes];
+//    Byte *byteNu = (Byte *)[charData bytes];
+    NSString *byteStr = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
     
-        NSLog(@"read data length - %zd  uuid : %@ value is - %s",charData.length,characteristic.UUID.UUIDString,byteNu);
-    self.receivedLabel.text = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+
+        
+        NSLog(@"read data length - %zd  uuid : %@ value is - %@",charData.length,characteristic.UUID.UUIDString,byteStr);
+
+    [self.allReceivedValues appendString:byteStr ? byteStr :@""];
+
+    
+    if ([byteStr containsString:@"\n"]) {
+        
+        //判断是否是需要解析的数据
+        if ([self.allReceivedValues containsString:@"db_sk_report_info_b1"]) {
+            SGHolderDetectedResult *detectedResult = [SGHolderDetectedResult holderDetectedResultWithResultString:self.allReceivedValues];
+            NSLog(@"detected commandCode - %@",detectedResult.commandCode);
+            NSLog(@"pefgroupCount - %@",detectedResult.pefGroups);
+        }
+        
+    }
+    
+
 //        NSString *valueStr = @"solon 666666";
 //        NSData *value = [NSData dataWithBytes:[valueStr UTF8String] length:valueStr.length];
 //        [self peripheral:peripheral writeValueForCharacteristic:characteristic value:value];
@@ -239,10 +336,13 @@
         [peripheral writeValue:value forCharacteristic:characteristic type:CBCharacteristicWriteWithResponse];
         NSLog(@"characteristic UUID : %@ 写入成功",characteristic.UUID);
         
+        
     }else {
         NSLog(@"characteristic %@ can't write",characteristic.UUID);
     }
 }
+
+
 
 //发现characteristic的descriptors
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverDescriptorsForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
@@ -255,4 +355,7 @@
         NSLog(@"characteristic uuid: %@ \n descriptor uuid : %@",characteristic.UUID,d.UUID);
     }
 }
+
+
+
 @end

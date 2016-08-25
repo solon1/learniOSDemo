@@ -15,6 +15,7 @@
 		283DFCE51D597DD0000EEF9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283DFCE31D597DD0000EEF9D /* LaunchScreen.storyboard */; };
 		283DFCF01D597DD0000EEF9D /* BluetoothDevTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 283DFCEF1D597DD0000EEF9D /* BluetoothDevTests.m */; };
 		283DFCFB1D597DD0000EEF9D /* BluetoothDevUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 283DFCFA1D597DD0000EEF9D /* BluetoothDevUITests.m */; };
+		28C80C7C1D6BEBF900D4F841 /* SGHolderDetectedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C80C7B1D6BEBF900D4F841 /* SGHolderDetectedResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		283DFCF61D597DD0000EEF9D /* BluetoothDevUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BluetoothDevUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		283DFCFA1D597DD0000EEF9D /* BluetoothDevUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BluetoothDevUITests.m; sourceTree = "<group>"; };
 		283DFCFC1D597DD0000EEF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28C80C7A1D6BEBF900D4F841 /* SGHolderDetectedResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHolderDetectedResult.h; sourceTree = "<group>"; };
+		28C80C7B1D6BEBF900D4F841 /* SGHolderDetectedResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHolderDetectedResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				283DFCD91D597DD0000EEF9D /* AppDelegate.m */,
 				283DFCDB1D597DD0000EEF9D /* ViewController.h */,
 				283DFCDC1D597DD0000EEF9D /* ViewController.m */,
+				28C80C7A1D6BEBF900D4F841 /* SGHolderDetectedResult.h */,
+				28C80C7B1D6BEBF900D4F841 /* SGHolderDetectedResult.m */,
 				283DFCDE1D597DD0000EEF9D /* Main.storyboard */,
 				283DFCE11D597DD0000EEF9D /* Assets.xcassets */,
 				283DFCE31D597DD0000EEF9D /* LaunchScreen.storyboard */,
@@ -270,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28C80C7C1D6BEBF900D4F841 /* SGHolderDetectedResult.m in Sources */,
 				283DFCDD1D597DD0000EEF9D /* ViewController.m in Sources */,
 				283DFCDA1D597DD0000EEF9D /* AppDelegate.m in Sources */,
 				283DFCD71D597DD0000EEF9D /* main.m in Sources */,
@@ -496,6 +502,7 @@
 				283DFD011D597DD0000EEF9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		283DFD021D597DD0000EEF9D /* Build configuration list for PBXNativeTarget "BluetoothDevTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +511,7 @@
 				283DFD041D597DD0000EEF9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		283DFD051D597DD0000EEF9D /* Build configuration list for PBXNativeTarget "BluetoothDevUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +520,7 @@
 				283DFD071D597DD0000EEF9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

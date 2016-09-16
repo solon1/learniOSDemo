@@ -28,7 +28,7 @@
     return properties.copy;
 }
 
-
+#pragma mark - 此处数组可能会越界
 - (instancetype)initWithDetectedResultString:(NSString *)result
 {
 

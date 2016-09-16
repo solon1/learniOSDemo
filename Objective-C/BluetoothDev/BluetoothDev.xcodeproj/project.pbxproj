@@ -16,6 +16,7 @@
 		283DFCF01D597DD0000EEF9D /* BluetoothDevTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 283DFCEF1D597DD0000EEF9D /* BluetoothDevTests.m */; };
 		283DFCFB1D597DD0000EEF9D /* BluetoothDevUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 283DFCFA1D597DD0000EEF9D /* BluetoothDevUITests.m */; };
 		28C80C7C1D6BEBF900D4F841 /* SGHolderDetectedResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C80C7B1D6BEBF900D4F841 /* SGHolderDetectedResult.m */; };
+		28C8FBE71D6EEF5E00C0320F /* SNBluetoothHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C8FBE61D6EEF5E00C0320F /* SNBluetoothHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		283DFCFC1D597DD0000EEF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28C80C7A1D6BEBF900D4F841 /* SGHolderDetectedResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHolderDetectedResult.h; sourceTree = "<group>"; };
 		28C80C7B1D6BEBF900D4F841 /* SGHolderDetectedResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHolderDetectedResult.m; sourceTree = "<group>"; };
+		28C8FBE51D6EEF5E00C0320F /* SNBluetoothHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNBluetoothHelper.h; sourceTree = "<group>"; };
+		28C8FBE61D6EEF5E00C0320F /* SNBluetoothHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNBluetoothHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,8 @@
 				283DFCD91D597DD0000EEF9D /* AppDelegate.m */,
 				283DFCDB1D597DD0000EEF9D /* ViewController.h */,
 				283DFCDC1D597DD0000EEF9D /* ViewController.m */,
+				28C8FBE51D6EEF5E00C0320F /* SNBluetoothHelper.h */,
+				28C8FBE61D6EEF5E00C0320F /* SNBluetoothHelper.m */,
 				28C80C7A1D6BEBF900D4F841 /* SGHolderDetectedResult.h */,
 				28C80C7B1D6BEBF900D4F841 /* SGHolderDetectedResult.m */,
 				283DFCDE1D597DD0000EEF9D /* Main.storyboard */,
@@ -277,6 +282,7 @@
 			files = (
 				28C80C7C1D6BEBF900D4F841 /* SGHolderDetectedResult.m in Sources */,
 				283DFCDD1D597DD0000EEF9D /* ViewController.m in Sources */,
+				28C8FBE71D6EEF5E00C0320F /* SNBluetoothHelper.m in Sources */,
 				283DFCDA1D597DD0000EEF9D /* AppDelegate.m in Sources */,
 				283DFCD71D597DD0000EEF9D /* main.m in Sources */,
 			);

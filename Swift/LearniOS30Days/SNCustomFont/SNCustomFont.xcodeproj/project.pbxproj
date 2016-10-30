@@ -14,10 +14,10 @@
 		2858D4D51DC5A7C500CCB5CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2858D4D31DC5A7C500CCB5CA /* LaunchScreen.storyboard */; };
 		2858D4E01DC5A7C500CCB5CA /* SNCustomFontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858D4DF1DC5A7C500CCB5CA /* SNCustomFontTests.swift */; };
 		2858D4EB1DC5A7C500CCB5CA /* SNCustomFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858D4EA1DC5A7C500CCB5CA /* SNCustomFontUITests.swift */; };
-		2858D4FD1DC5A82600CCB5CA /* Gaspar Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2858D4F91DC5A82600CCB5CA /* Gaspar Regular.otf */; };
-		2858D4FE1DC5A82600CCB5CA /* MFJinHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2858D4FA1DC5A82600CCB5CA /* MFJinHei_Noncommercial-Regular.ttf */; };
-		2858D4FF1DC5A82600CCB5CA /* MFTongXin_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2858D4FB1DC5A82600CCB5CA /* MFTongXin_Noncommercial-Regular.ttf */; };
-		2858D5001DC5A82600CCB5CA /* MFZhiHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2858D4FC1DC5A82600CCB5CA /* MFZhiHei_Noncommercial-Regular.ttf */; };
+		2858D5051DC5EBCA00CCB5CA /* Gaspar Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2858D5011DC5EBCA00CCB5CA /* Gaspar Regular.otf */; };
+		2858D5061DC5EBCA00CCB5CA /* MFJinHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2858D5021DC5EBCA00CCB5CA /* MFJinHei_Noncommercial-Regular.ttf */; };
+		2858D5071DC5EBCA00CCB5CA /* MFTongXin_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2858D5031DC5EBCA00CCB5CA /* MFTongXin_Noncommercial-Regular.ttf */; };
+		2858D5081DC5EBCA00CCB5CA /* MFZhiHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2858D5041DC5EBCA00CCB5CA /* MFZhiHei_Noncommercial-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +51,10 @@
 		2858D4E61DC5A7C500CCB5CA /* SNCustomFontUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNCustomFontUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2858D4EA1DC5A7C500CCB5CA /* SNCustomFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNCustomFontUITests.swift; sourceTree = "<group>"; };
 		2858D4EC1DC5A7C500CCB5CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2858D4F91DC5A82600CCB5CA /* Gaspar Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaspar Regular.otf"; sourceTree = "<group>"; };
-		2858D4FA1DC5A82600CCB5CA /* MFJinHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFJinHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
-		2858D4FB1DC5A82600CCB5CA /* MFTongXin_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFTongXin_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
-		2858D4FC1DC5A82600CCB5CA /* MFZhiHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFZhiHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
+		2858D5011DC5EBCA00CCB5CA /* Gaspar Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaspar Regular.otf"; sourceTree = "<group>"; };
+		2858D5021DC5EBCA00CCB5CA /* MFJinHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFJinHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
+		2858D5031DC5EBCA00CCB5CA /* MFTongXin_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFTongXin_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
+		2858D5041DC5EBCA00CCB5CA /* MFZhiHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFZhiHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,10 @@
 				2858D4D11DC5A7C500CCB5CA /* Assets.xcassets */,
 				2858D4D31DC5A7C500CCB5CA /* LaunchScreen.storyboard */,
 				2858D4D61DC5A7C500CCB5CA /* Info.plist */,
-				2858D4F81DC5A82600CCB5CA /* Fonts */,
+				2858D5011DC5EBCA00CCB5CA /* Gaspar Regular.otf */,
+				2858D5021DC5EBCA00CCB5CA /* MFJinHei_Noncommercial-Regular.ttf */,
+				2858D5031DC5EBCA00CCB5CA /* MFTongXin_Noncommercial-Regular.ttf */,
+				2858D5041DC5EBCA00CCB5CA /* MFZhiHei_Noncommercial-Regular.ttf */,
 			);
 			path = SNCustomFont;
 			sourceTree = "<group>";
@@ -132,17 +135,6 @@
 				2858D4EC1DC5A7C500CCB5CA /* Info.plist */,
 			);
 			path = SNCustomFontUITests;
-			sourceTree = "<group>";
-		};
-		2858D4F81DC5A82600CCB5CA /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				2858D4F91DC5A82600CCB5CA /* Gaspar Regular.otf */,
-				2858D4FA1DC5A82600CCB5CA /* MFJinHei_Noncommercial-Regular.ttf */,
-				2858D4FB1DC5A82600CCB5CA /* MFTongXin_Noncommercial-Regular.ttf */,
-				2858D4FC1DC5A82600CCB5CA /* MFZhiHei_Noncommercial-Regular.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,12 +241,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2858D5071DC5EBCA00CCB5CA /* MFTongXin_Noncommercial-Regular.ttf in Resources */,
+				2858D5081DC5EBCA00CCB5CA /* MFZhiHei_Noncommercial-Regular.ttf in Resources */,
 				2858D4D51DC5A7C500CCB5CA /* LaunchScreen.storyboard in Resources */,
-				2858D4FD1DC5A82600CCB5CA /* Gaspar Regular.otf in Resources */,
-				2858D5001DC5A82600CCB5CA /* MFZhiHei_Noncommercial-Regular.ttf in Resources */,
-				2858D4FE1DC5A82600CCB5CA /* MFJinHei_Noncommercial-Regular.ttf in Resources */,
+				2858D5051DC5EBCA00CCB5CA /* Gaspar Regular.otf in Resources */,
 				2858D4D21DC5A7C500CCB5CA /* Assets.xcassets in Resources */,
-				2858D4FF1DC5A82600CCB5CA /* MFTongXin_Noncommercial-Regular.ttf in Resources */,
+				2858D5061DC5EBCA00CCB5CA /* MFJinHei_Noncommercial-Regular.ttf in Resources */,
 				2858D4D01DC5A7C500CCB5CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

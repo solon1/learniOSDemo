@@ -31,14 +31,22 @@
 //    [self stretchImageForView];
 //    [self drawWithDelegate];
 //    [self setClockView];
-    
+    [self usezPositionInTwoViews];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 #pragma mark - zPosition应用
 - (void)usezPositionInTwoViews
 {
-    UIView *viewOne = [UIView alloc] initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+    UIView *viewOne = [[UIView alloc] initWithFrame:CGRectMake(10, 100, 200, 200)];
+    viewOne.backgroundColor = [UIColor redColor];
+    [self.view addSubview:viewOne];
+    
+    UIView *viewTwo = [[UIView alloc] initWithFrame:CGRectMake(160, 250, 200, 200)];
+    viewTwo.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:viewTwo];
+    
+    viewOne.layer.zPosition = 1.0f;
 }
 
 #pragma mark - anchorPoint示例

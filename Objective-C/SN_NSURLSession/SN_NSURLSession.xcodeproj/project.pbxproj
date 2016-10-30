@@ -496,6 +496,7 @@
 				28B719021DBCC120003246E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28B719031DBCC120003246E3 /* Build configuration list for PBXNativeTarget "SN_NSURLSessionTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +505,7 @@
 				28B719051DBCC120003246E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28B719061DBCC120003246E3 /* Build configuration list for PBXNativeTarget "SN_NSURLSessionUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +514,7 @@
 				28B719081DBCC120003246E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
